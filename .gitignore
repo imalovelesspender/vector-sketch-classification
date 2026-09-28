@@ -1,0 +1,22 @@
+# Data: keep only the README tracked
+data/*
+!data/README.md
+
+# QuickDraw files downloaded elsewhere
+*.ndjson
+*.npz
+*.bin
+*.tfrecord*
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
