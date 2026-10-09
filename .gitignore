@@ -1,5 +1,6 @@
 # Data: keep only the README tracked
 data/*
+!data/*.py
 !data/README.md
 
 # QuickDraw files downloaded elsewhere
