@@ -1,7 +1,6 @@
-# Data: keep only the README tracked
-data/*
-!data/*.py
-!data/README.md
+# Local datasets and prepared shards; keep only the data documentation
+/data/**
+!/data/README.md
 
 # QuickDraw files downloaded elsewhere
 *.ndjson
@@ -15,6 +14,7 @@ __pycache__/
 *.egg-info/
 .venv/
 venv/
+env/
 
 # Jupyter
 .ipynb_checkpoints/

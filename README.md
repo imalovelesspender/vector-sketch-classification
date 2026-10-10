@@ -95,9 +95,9 @@ vector-sketch-classification/
 - [x] Project proposal
 - [x] Repository setup
 - [ ] Literature review
-- [ ] Choose deep learning framework
-- [ ] Dataset subset selection and preprocessing
-- [ ] Train/validation/test splits
+- [x] PyTorch environment and local notebook kernel
+- [x] Full Sketch-RNN download and preprocessing
+- [x] Preserve official train/validation/test splits
 - [ ] RNN baseline
 - [ ] Transformer classifier
 - [ ] Retrieval-augmented classifier
@@ -117,3 +117,36 @@ vector-sketch-classification/
 4. P. Xu et al. *SketchMate: Deep Hashing for Million-Scale Human Sketch
    Retrieval.* CVPR, 2018.
 5. D. Ha and D. Eck. *A Neural Representation of Sketch Drawings.* ICLR, 2018.
+
+## Local preprocessing setup
+
+The Anaconda environment is named `vector-classification` (Python 3.12).
+From Anaconda Prompt, change to this repository, then run:
+
+```sh
+conda activate vector-classification
+python -m jupyterlab data_preprocessing/preprocess.ipynb
+```
+
+Select **Python (vector-classification)** as the notebook kernel.
+To recreate the environment on another machine:
+
+```sh
+conda create -n vector-classification python=3.12 pip -y
+conda activate vector-classification
+python -m pip install -r requirements.txt
+python -m ipykernel install --user --name vector-classification --display-name "Python (vector-classification)"
+```
+
+`data/` contains downloaded archives and prepared shards and is ignored except
+for its README. `data_preprocessing/` contains the tracked notebook, including dataset
+download, inspection, processing, and PyTorch batch conversion. The notebook uses all 345 full archives by default and
+reuses completed prepared outputs. See `data/README.md` for exact preprocessing.
+
+The notebook now downloads the dataset itself on first run; no data is required
+in a fresh clone before starting it. Basic analysis packages and PyTorch are
+included in `requirements.txt`. `math` is part of Python itself.
+
+On this machine, the environment uses the official PyTorch CUDA 12.8 build for
+the RTX 5060 GPU. Teammates can select a build for their own hardware using
+https://pytorch.org/get-started/locally/. The default requirements remain portable.

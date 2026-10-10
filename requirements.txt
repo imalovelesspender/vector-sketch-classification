@@ -1,4 +1,14 @@
-numpy
+# Data preprocessing and local notebooks (Python 3.12)
+numpy>=2.0,<3
+pandas>=2.2,<4
+scipy>=1.14,<2
+scikit-learn>=1.5,<2
+matplotlib>=3.9,<4
+tqdm>=4.66,<5
+torch>=2.7,<3
+ipykernel>=6.29,<8
+jupyterlab>=4.2,<5
 
-# TODO: Add deep learning framework (e.g., PyTorch or TensorFlow) once decided.
-# TODO: Add other dependencies as implementation proceeds.
+# math, pathlib, json, random, collections, and urllib are Python built-ins.
+# For GPU training, install the torch build matching your hardware using
+# https://pytorch.org/get-started/locally/ (the default pip build can be CPU-only).
