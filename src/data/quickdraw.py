@@ -20,10 +20,31 @@ Inspected structure of each ``.npz`` file (e.g. ``cat.npz``):
 
 Files are loaded with ``allow_pickle=True`` and ``encoding="latin1"`` because the
 arrays are pickled object arrays written by Python 2.
+
+Processed format (``data_format="processed"``), as written by
+``data_preprocessing/preprocess.ipynb`` on the ``data-preprocessing`` branch::
+
+    data/processed_full/
+        manifest.json
+        cat/
+            train.npz
+            valid.npz
+            test.npz
+        ...
+
+Each shard stores ``points`` (float32 ``(total_points, 3)``, stroke-3),
+``offsets`` (int64 ``(N + 1,)``; sketch ``i`` is ``points[offsets[i]:offsets[i+1]]``),
+``labels`` (int64 ``(N,)``, global 0-344 index) and ``ids`` (str ``(N,)``).
+Coordinates are already normalized (per-sketch bounding box, then a global
+training std), so the loader's own scaling must be turned off with
+``normalize=False``. Labels are remapped to the experiment-local index
+(position in ``categories``); the stored global labels are only checked
+against ``manifest.json``.
 """
 
 from __future__ import annotations
 
+import json
 import os
 from typing import Dict, List, Optional, Sequence
 
@@ -32,6 +53,7 @@ import torch
 from torch.utils.data import DataLoader, Dataset
 
 SPLITS = ("train", "valid", "test")
+DATA_FORMATS = ("sketchrnn", "processed")
 
 
 def load_category(path: str, split: str) -> np.ndarray:
@@ -42,6 +64,42 @@ def load_category(path: str, split: str) -> np.ndarray:
         if split not in data.files:
             raise KeyError(f"{path} has no {split!r} split (found {data.files})")
         return data[split]
+
+
+def load_processed_category(data_dir: str, category: str, split: str) -> tuple:
+    """Load one processed shard and split it back into variable-length sketches.
+
+    Returns ``(sketches, global_labels)``: a list of float32 ``(L, 3)`` arrays
+    (views into the shard's ``points``) and the stored int64 labels.
+    """
+    if split not in SPLITS:
+        raise ValueError(f"split must be one of {SPLITS}, got {split!r}")
+    path = os.path.join(data_dir, category, f"{split}.npz")
+    if not os.path.isfile(path):
+        raise FileNotFoundError(
+            f"{path} not found. Expected <data_dir>/<category>/<split>.npz "
+            "from data_preprocessing/preprocess.ipynb."
+        )
+    with np.load(path, allow_pickle=False) as data:
+        points, offsets, labels = data["points"], data["offsets"], data["labels"]
+    n = len(offsets) - 1
+    if points.ndim != 2 or points.shape[1] != 3:
+        raise ValueError(f"{path}: points must be (total_points, 3), got {points.shape}")
+    if offsets[0] != 0 or offsets[-1] != len(points) or np.any(np.diff(offsets) <= 0):
+        raise ValueError(f"{path}: offsets do not partition points into non-empty sketches")
+    if len(labels) != n:
+        raise ValueError(f"{path}: {len(labels)} labels for {n} sketches")
+    sketches = [points[offsets[i]:offsets[i + 1]] for i in range(n)]
+    return sketches, labels
+
+
+def load_manifest(data_dir: str) -> Optional[dict]:
+    """Return ``<data_dir>/manifest.json`` if present, else ``None``."""
+    path = os.path.join(data_dir, "manifest.json")
+    if not os.path.isfile(path):
+        return None
+    with open(path) as f:
+        return json.load(f)
 
 
 def to_stroke5(stroke3: np.ndarray) -> np.ndarray:
@@ -70,7 +128,9 @@ class QuickDrawStrokeDataset(Dataset):
     """Multi-category QuickDraw stroke-sequence dataset for classification.
 
     Args:
-        data_dir: directory containing ``<category>.npz`` files.
+        data_dir: directory containing ``<category>.npz`` files
+            (``data_format="sketchrnn"``) or ``<category>/<split>.npz`` shards
+            (``data_format="processed"``).
         categories: category names; label ``i`` is ``categories[i]``.
         split: ``"train"``, ``"valid"`` or ``"test"`` (the splits shipped in the files).
         samples_per_class: if set, randomly sample at most this many sketches per
@@ -80,6 +140,9 @@ class QuickDrawStrokeDataset(Dataset):
             from this dataset; for valid/test pass the training set's value.
         stroke_format: ``"stroke3"`` (3 features) or ``"stroke5"`` (5 features).
         seed: seed for subset sampling.
+        data_format: ``"sketchrnn"`` (raw per-category files) or ``"processed"``.
+        normalize: if ``False``, coordinates are used as stored (scale factor
+            1.0). Must be ``False`` for already-normalized processed data.
     """
 
     def __init__(
@@ -92,23 +155,47 @@ class QuickDrawStrokeDataset(Dataset):
         scale_factor: Optional[float] = None,
         stroke_format: str = "stroke3",
         seed: int = 0,
+        data_format: str = "sketchrnn",
+        normalize: bool = True,
     ):
         if stroke_format not in ("stroke3", "stroke5"):
             raise ValueError(f"unknown stroke_format {stroke_format!r}")
+        if data_format not in DATA_FORMATS:
+            raise ValueError(f"unknown data_format {data_format!r}")
+        if data_format == "processed" and normalize:
+            raise ValueError(
+                "processed data is already normalized; set normalize=False "
+                '("normalize": false in the config) to avoid scaling it twice'
+            )
+        if not normalize:
+            if scale_factor not in (None, 1.0):
+                raise ValueError(f"normalize=False requires scale_factor 1.0, got {scale_factor}")
+            scale_factor = 1.0
         self.categories = list(categories)
         self.split = split
         self.stroke_format = stroke_format
         rng = np.random.default_rng(seed)
 
+        manifest = load_manifest(data_dir) if data_format == "processed" else None
         sketches: List[np.ndarray] = []
         labels: List[int] = []
         for label, name in enumerate(self.categories):
-            path = os.path.join(data_dir, f"{name}.npz")
-            if not os.path.isfile(path):
-                raise FileNotFoundError(
-                    f"{path} not found. Download it manually, see data/README.md."
-                )
-            cat_sketches = list(load_category(path, split))
+            if data_format == "processed":
+                cat_sketches, global_labels = load_processed_category(data_dir, name, split)
+                if manifest is not None:
+                    expected = manifest["class_to_index"].get(name)
+                    if expected is None or np.any(global_labels != expected):
+                        raise ValueError(
+                            f"stored labels of {name!r}/{split} do not match "
+                            f"manifest class_to_index ({expected})"
+                        )
+            else:
+                path = os.path.join(data_dir, f"{name}.npz")
+                if not os.path.isfile(path):
+                    raise FileNotFoundError(
+                        f"{path} not found. Download it manually, see data/README.md."
+                    )
+                cat_sketches = list(load_category(path, split))
             if max_seq_len is not None:
                 cat_sketches = [s for s in cat_sketches if len(s) <= max_seq_len]
             if samples_per_class is not None and samples_per_class < len(cat_sketches):
@@ -174,14 +261,22 @@ def build_datasets(
     seed: int = 0,
     scale_factor: Optional[float] = None,
     splits: Sequence[str] = SPLITS,
+    data_format: str = "sketchrnn",
+    normalize: bool = True,
 ) -> Dict[str, QuickDrawStrokeDataset]:
     """Build datasets for the requested splits.
 
     The normalization scale factor is computed on the training split (unless
     given) and reused for valid/test so no statistics leak from held-out data.
+    With ``normalize=False`` no scale is computed and the factor is 1.0.
     """
     sizes = {"train": train_per_class, "valid": val_per_class, "test": test_per_class}
-    kwargs = dict(max_seq_len=max_seq_len, stroke_format=stroke_format, seed=seed)
+    kwargs = dict(
+        max_seq_len=max_seq_len, stroke_format=stroke_format, seed=seed,
+        data_format=data_format, normalize=normalize,
+    )
+    if not normalize and scale_factor is None:
+        scale_factor = 1.0
     datasets: Dict[str, QuickDrawStrokeDataset] = {}
     if scale_factor is None:
         train = QuickDrawStrokeDataset(

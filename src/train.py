@@ -74,6 +74,8 @@ def train(cfg: dict) -> dict:
         stroke_format=data_cfg.get("stroke_format", "stroke3"),
         seed=seed,
         splits=("train", "valid"),
+        data_format=data_cfg.get("data_format", "sketchrnn"),
+        normalize=data_cfg.get("normalize", True),
     )
     loaders = build_dataloaders(
         datasets, data_cfg.get("batch_size", 64), data_cfg.get("num_workers", 0), seed

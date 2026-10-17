@@ -3,6 +3,10 @@ data/*
 !data/*.py
 !data/README.md
 
+# Experiment outputs (checkpoints, logs, curves, metrics) stay local
+results/*
+!results/.gitkeep
+
 # QuickDraw files downloaded elsewhere
 *.ndjson
 *.npz

@@ -61,6 +61,8 @@ def evaluate(checkpoint, split="test", data_dir=None, device="auto", batch_size=
         seed=cfg.get("seed", 0),
         scale_factor=ckpt["scale_factor"],
         splits=(split,),
+        data_format=data_cfg.get("data_format", "sketchrnn"),
+        normalize=data_cfg.get("normalize", True),
     )
     # Fixed order (no shuffling), even for the train split, so exported
     # embeddings line up with dataset indices.

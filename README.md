@@ -72,6 +72,13 @@ pip install -r requirements.txt
 Download the per-category `.npz` files into `data/sketchrnn/` as described in
 [`data/README.md`](data/README.md). Nothing is downloaded automatically.
 
+To use the processed shards from `data_preprocessing/preprocess.ipynb`
+(`data/processed_full/<category>/{train,valid,test}.npz` + `manifest.json`),
+use `configs/lstm_baseline_processed.json`. It sets `"data_format": "processed"`
+and `"normalize": false`, because those coordinates are already normalized;
+labels are remapped to the position of each category in the config. Test the
+reader with `python -m tests.processed_format_test` (synthetic fixture).
+
 ### Expected input format
 
 - One `<category>.npz` per category, with keys `train`, `valid`, `test`.
