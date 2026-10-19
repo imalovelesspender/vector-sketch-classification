@@ -1,5 +1,7 @@
 # Anson's 345-class BiLSTM baseline on PSC
 
+> **October 19 update:** the hidden-size ablation (128 / 256 / 512) is complete. See [HIDDEN_SIZE_ABLATION.md](HIDDEN_SIZE_ABLATION.md) for the validation comparison, new curves, and reproduction details. The baseline results below remain unchanged.
+
 This archive records a completed classification experiment for the midterm report. Anson connected Sihui's preprocessed QuickDraw data to Mae's existing BiLSTM training/evaluation pipeline with a separate PSC data adapter. The original model and training loop were unchanged. Training started from scratch with cross-entropy; this was not fine-tuning, a Sketch-RNN VAE, or a Transformer experiment.
 
 ## Results
@@ -82,4 +84,4 @@ The checkpoint stores the data path/config, so that processed-data directory mus
 
 ## Limits and next comparisons
 
-This is one baseline run with one seed and no completed ablation or Transformer comparison. It does not establish that these settings are optimal. For the next comparison, keep category order, sampled sketches, length filtering, preprocessing, and evaluation protocol fixed. Use validation for development; avoid choosing new settings using the already observed test result.
+This section describes the original single-seed baseline. The subsequent hidden-size ablation is recorded in [HIDDEN_SIZE_ABLATION.md](HIDDEN_SIZE_ABLATION.md); no Transformer comparison is reported here. It does not establish that these settings are optimal. For the next comparison, keep category order, sampled sketches, length filtering, preprocessing, and evaluation protocol fixed. Use validation for development; avoid choosing new settings using the already observed test result.

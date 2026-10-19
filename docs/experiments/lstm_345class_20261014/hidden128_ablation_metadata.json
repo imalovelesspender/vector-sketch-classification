@@ -1,0 +1,9 @@
+{
+  "hidden_dim": 128,
+  "baseline_hidden_dim": 256,
+  "parameter_count": 224857,
+  "baseline_config_sha256": "b62e06995f8db76ada5a890cdb63a7443e6a43d8b4d6a0fda4d323e41f64deb8",
+  "source_hashes_verified": true,
+  "exact_train_valid_ids_verified": true,
+  "test_evaluated": false
+}
