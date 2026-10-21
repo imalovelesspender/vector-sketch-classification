@@ -1,0 +1,24 @@
+{
+  "manifest_sha256": "bcb35d25404fb1795af5bebb532ede6bfa2c5d7725489a1038c3cd6b4a14578c",
+  "scale": 0.12035210854952101,
+  "scale_matches_sihui": true,
+  "split_counts": {
+    "train": 43988874,
+    "valid": 862500,
+    "test": 862500
+  },
+  "min_eligible_per_class": {
+    "train": 97480,
+    "valid": 2385
+  },
+  "predicted_sample_ids_sha256": {
+    "train": "67e6b8afdbd1d09ece950dd56fa1f03e1495aa12423763a3e6baf9165552bf0b",
+    "valid": "97160becfbfc1101c3a212d64ff5b57d3ce90b337091de026a7a0565e4e21da7"
+  },
+  "predicted_sample_counts": {
+    "train": 1725000,
+    "valid": 172500
+  },
+  "shard_sha256_file": "shard_sha256.json",
+  "original_report_sha256": "974feeb82f8570c6ba6f34e94f1c2d533d267f01754bfb90e83b39c9b14d7d3f"
+}

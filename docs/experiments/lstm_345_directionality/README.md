@@ -1,4 +1,8 @@
-# 345-class LSTM directionality ablation (independent, prepared, not yet run)
+# 345-class LSTM directionality ablation (independent; completed 2026-10-21)
+
+Results: [ABLATION_STUDY.md](ABLATION_STUDY.md) (report-ready section) and [AUDIT.md](AUDIT.md)
+(parameter counts, fairness checks, curve analysis). Artifacts, without checkpoints, sample-ID lists or data, are in
+[results/](results/). PSC jobs 49532872–49532875 ran from `/ocean/projects/cis260329p/mcui3/`.
 
 Question: on all 345 QuickDraw classes, does reading the stroke sequence in both
 directions help, and is any gain explained by the larger final embedding?

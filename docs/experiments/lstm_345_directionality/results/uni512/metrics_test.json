@@ -1,0 +1,8 @@
+{
+  "loss": 0.8834344209753948,
+  "acc": 0.7621913043478261,
+  "split": "test",
+  "num_samples": 172500,
+  "checkpoint": "results/lstm_345_uni512/best.pt",
+  "epoch": 6
+}

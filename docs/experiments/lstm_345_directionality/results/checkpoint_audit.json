@@ -1,0 +1,318 @@
+{
+ "bi256": {
+  "config_model": {
+   "encoder": "lstm",
+   "hidden_dim": 256,
+   "num_layers": 1,
+   "bidirectional": true,
+   "dropout": 0.0,
+   "pooling": "last",
+   "embedding_dim": null
+  },
+  "built_parameters": 711513,
+  "best": {
+   "sha256": "16e95697b4d1503d126f80bba4406a708b36961290237dfec93bcf99f52b095b",
+   "epoch": 10,
+   "val": {
+    "loss": 0.9287088905555615,
+    "acc": 0.7519304347826087
+   },
+   "state_dict_parameters": 711513,
+   "shapes": {
+    "encoder.lstm.weight_ih_l0": [
+     1024,
+     3
+    ],
+    "encoder.lstm.weight_hh_l0": [
+     1024,
+     256
+    ],
+    "encoder.lstm.bias_ih_l0": [
+     1024
+    ],
+    "encoder.lstm.bias_hh_l0": [
+     1024
+    ],
+    "encoder.lstm.weight_ih_l0_reverse": [
+     1024,
+     3
+    ],
+    "encoder.lstm.weight_hh_l0_reverse": [
+     1024,
+     256
+    ],
+    "encoder.lstm.bias_ih_l0_reverse": [
+     1024
+    ],
+    "encoder.lstm.bias_hh_l0_reverse": [
+     1024
+    ],
+    "head.weight": [
+     345,
+     512
+    ],
+    "head.bias": [
+     345
+    ]
+   },
+   "stored_config_model": {
+    "encoder": "lstm",
+    "hidden_dim": 256,
+    "num_layers": 1,
+    "bidirectional": true,
+    "dropout": 0.0,
+    "pooling": "last",
+    "embedding_dim": null
+   },
+   "loads_strict": "<All keys matched successfully>"
+  },
+  "last": {
+   "sha256": "791a8d3af0bf9db0b113acf1ebe879cbc9a16737f83535e414021accfacfbd0a",
+   "epoch": 10,
+   "val": {
+    "loss": 0.9287088905555615,
+    "acc": 0.7519304347826087
+   },
+   "state_dict_parameters": 711513,
+   "shapes": {
+    "encoder.lstm.weight_ih_l0": [
+     1024,
+     3
+    ],
+    "encoder.lstm.weight_hh_l0": [
+     1024,
+     256
+    ],
+    "encoder.lstm.bias_ih_l0": [
+     1024
+    ],
+    "encoder.lstm.bias_hh_l0": [
+     1024
+    ],
+    "encoder.lstm.weight_ih_l0_reverse": [
+     1024,
+     3
+    ],
+    "encoder.lstm.weight_hh_l0_reverse": [
+     1024,
+     256
+    ],
+    "encoder.lstm.bias_ih_l0_reverse": [
+     1024
+    ],
+    "encoder.lstm.bias_hh_l0_reverse": [
+     1024
+    ],
+    "head.weight": [
+     345,
+     512
+    ],
+    "head.bias": [
+     345
+    ]
+   },
+   "stored_config_model": {
+    "encoder": "lstm",
+    "hidden_dim": 256,
+    "num_layers": 1,
+    "bidirectional": true,
+    "dropout": 0.0,
+    "pooling": "last",
+    "embedding_dim": null
+   },
+   "loads_strict": "<All keys matched successfully>"
+  }
+ },
+ "uni512": {
+  "config_model": {
+   "encoder": "lstm",
+   "hidden_dim": 512,
+   "num_layers": 1,
+   "bidirectional": false,
+   "dropout": 0.0,
+   "pooling": "last",
+   "embedding_dim": null
+  },
+  "built_parameters": 1235801,
+  "best": {
+   "sha256": "42922b2f0f9f0d34b761d8d837523e6d87510bdd220d0d421a4c2a54ce1dbd64",
+   "epoch": 6,
+   "val": {
+    "loss": 0.8880533355381178,
+    "acc": 0.7624231884057971
+   },
+   "state_dict_parameters": 1235801,
+   "shapes": {
+    "encoder.lstm.weight_ih_l0": [
+     2048,
+     3
+    ],
+    "encoder.lstm.weight_hh_l0": [
+     2048,
+     512
+    ],
+    "encoder.lstm.bias_ih_l0": [
+     2048
+    ],
+    "encoder.lstm.bias_hh_l0": [
+     2048
+    ],
+    "head.weight": [
+     345,
+     512
+    ],
+    "head.bias": [
+     345
+    ]
+   },
+   "stored_config_model": {
+    "encoder": "lstm",
+    "hidden_dim": 512,
+    "num_layers": 1,
+    "bidirectional": false,
+    "dropout": 0.0,
+    "pooling": "last",
+    "embedding_dim": null
+   },
+   "loads_strict": "<All keys matched successfully>"
+  },
+  "last": {
+   "sha256": "f490afa30b6859bbd709711a8d4a59c913e11f9cc89a3c0f14b6ab295264a114",
+   "epoch": 10,
+   "val": {
+    "loss": 0.910802028788691,
+    "acc": 0.7598666666666667
+   },
+   "state_dict_parameters": 1235801,
+   "shapes": {
+    "encoder.lstm.weight_ih_l0": [
+     2048,
+     3
+    ],
+    "encoder.lstm.weight_hh_l0": [
+     2048,
+     512
+    ],
+    "encoder.lstm.bias_ih_l0": [
+     2048
+    ],
+    "encoder.lstm.bias_hh_l0": [
+     2048
+    ],
+    "head.weight": [
+     345,
+     512
+    ],
+    "head.bias": [
+     345
+    ]
+   },
+   "stored_config_model": {
+    "encoder": "lstm",
+    "hidden_dim": 512,
+    "num_layers": 1,
+    "bidirectional": false,
+    "dropout": 0.0,
+    "pooling": "last",
+    "embedding_dim": null
+   },
+   "loads_strict": "<All keys matched successfully>"
+  }
+ },
+ "uni256": {
+  "config_model": {
+   "encoder": "lstm",
+   "hidden_dim": 256,
+   "num_layers": 1,
+   "bidirectional": false,
+   "dropout": 0.0,
+   "pooling": "last",
+   "embedding_dim": null
+  },
+  "built_parameters": 355929,
+  "best": {
+   "sha256": "ae7b3f072776ccc66e176a16c0c09abd9e4aeb96a3c504e85bcb18147adf9aed",
+   "epoch": 10,
+   "val": {
+    "loss": 0.9669807666612708,
+    "acc": 0.7427304347826087
+   },
+   "state_dict_parameters": 355929,
+   "shapes": {
+    "encoder.lstm.weight_ih_l0": [
+     1024,
+     3
+    ],
+    "encoder.lstm.weight_hh_l0": [
+     1024,
+     256
+    ],
+    "encoder.lstm.bias_ih_l0": [
+     1024
+    ],
+    "encoder.lstm.bias_hh_l0": [
+     1024
+    ],
+    "head.weight": [
+     345,
+     256
+    ],
+    "head.bias": [
+     345
+    ]
+   },
+   "stored_config_model": {
+    "encoder": "lstm",
+    "hidden_dim": 256,
+    "num_layers": 1,
+    "bidirectional": false,
+    "dropout": 0.0,
+    "pooling": "last",
+    "embedding_dim": null
+   },
+   "loads_strict": "<All keys matched successfully>"
+  },
+  "last": {
+   "sha256": "bccf6107c629d8cff00b8120d3e895cb3eb8efb335c8e997b1a80a9143e6b687",
+   "epoch": 10,
+   "val": {
+    "loss": 0.9669807666612708,
+    "acc": 0.7427304347826087
+   },
+   "state_dict_parameters": 355929,
+   "shapes": {
+    "encoder.lstm.weight_ih_l0": [
+     1024,
+     3
+    ],
+    "encoder.lstm.weight_hh_l0": [
+     1024,
+     256
+    ],
+    "encoder.lstm.bias_ih_l0": [
+     1024
+    ],
+    "encoder.lstm.bias_hh_l0": [
+     1024
+    ],
+    "head.weight": [
+     345,
+     256
+    ],
+    "head.bias": [
+     345
+    ]
+   },
+   "stored_config_model": {
+    "encoder": "lstm",
+    "hidden_dim": 256,
+    "num_layers": 1,
+    "bidirectional": false,
+    "dropout": 0.0,
+    "pooling": "last",
+    "embedding_dim": null
+   },
+   "loads_strict": "<All keys matched successfully>"
+  }
+ }
+}

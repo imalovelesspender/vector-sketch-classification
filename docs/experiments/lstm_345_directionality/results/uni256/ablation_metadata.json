@@ -1,0 +1,21 @@
+{
+  "bidirectional": false,
+  "hidden_dim": 256,
+  "embedding_dim": 256,
+  "parameter_count": 355929,
+  "baseline": {
+    "bidirectional": true,
+    "hidden_dim": 256,
+    "embedding_dim": 512,
+    "parameter_count": 711513
+  },
+  "baseline_dir": "/ocean/projects/cis260329p/mcui3/qd-ablation/results/lstm_345_bi256",
+  "baseline_config_sha256": "367e3cfa1868ef5a6c7ffd99d6d598a69d0d6fe353a837b60734fbbb2a64f5d1",
+  "protocol_config_sha256": "b62e06995f8db76ada5a890cdb63a7443e6a43d8b4d6a0fda4d323e41f64deb8",
+  "runner_sha256": "d4bbcf289e691ec084c4ab2acb6cd7fb639d0ee7cc5b951ff909bc68068d1ca6",
+  "path_differences_from_baseline": {},
+  "protocol_matches_archived_bilstm256": true,
+  "source_hashes_verified": true,
+  "exact_train_valid_ids_verified": true,
+  "test_evaluated": false
+}
