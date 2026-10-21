@@ -1,4 +1,5 @@
 numpy
+torch
+matplotlib  # training curves
 
-# TODO: Add deep learning framework (e.g., PyTorch or TensorFlow) once decided.
 # TODO: Add other dependencies as implementation proceeds.

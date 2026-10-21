@@ -51,6 +51,108 @@ preprocessing details are still to be decided. See [`data/README.md`](data/READM
 
 Architectures and hyperparameters are still to be decided.
 
+## LSTM Classification Pipeline
+
+```
+stroke sequence (B, T, 3) + lengths
+  -> LSTMEncoder (packed, padding-aware)      src/models/rnn.py
+  -> sketch embedding z (B, D)
+  -> linear head -> logits (B, num_classes)   src/models/classifier.py
+  -> cross-entropy loss
+```
+
+### Setup
+
+```bash
+pip install -r requirements.txt
+```
+
+### 1. Prepare data
+
+Download the per-category `.npz` files into `data/sketchrnn/` as described in
+[`data/README.md`](data/README.md). Nothing is downloaded automatically.
+
+To use the processed shards from `data_preprocessing/preprocess.ipynb`
+(`data/processed_full/<category>/{train,valid,test}.npz` + `manifest.json`),
+use `configs/lstm_baseline_processed.json`. It sets `"data_format": "processed"`
+and `"normalize": false`, because those coordinates are already normalized;
+labels are remapped to the position of each category in the config. Test the
+reader with `python -m tests.processed_format_test` (synthetic fixture).
+
+### Expected input format
+
+- One `<category>.npz` per category, with keys `train`, `valid`, `test`.
+- Each sketch is an `(seq_len, 3)` stroke-3 array `(dx, dy, pen_lift)`.
+- `QuickDrawStrokeDataset` (`src/data/sketchrnn.py`) samples a configurable
+  number of sketches per class, divides `dx, dy` by the standard deviation of
+  the training offsets (Sketch-RNN normalization, reused for valid/test), and
+  can optionally convert to stroke-5 (`"stroke_format": "stroke5"`).
+- `collate_sketches` zero-pads each batch and returns
+  `strokes` `(B, T_max, F)`, `lengths` `(B,)` and `labels` `(B,)`.
+
+### 2. Smoke test
+
+```bash
+python -m tests.smoke_test                                   # synthetic stroke-3 data
+python -m tests.smoke_test --data-dir data/sketchrnn --categories angel cat apple
+```
+
+Checks tensor shapes, padding handling, forward pass, backprop, that loss drops
+when overfitting one tiny batch, checkpoint save/load, and a 2-epoch
+train + evaluate run.
+
+### 3. Train
+
+```bash
+python -m src.train --config configs/lstm_baseline.json
+# overrides: --categories cat apple --epochs 2 --output-dir results/debug --device cpu --seed 1
+```
+
+`configs/lstm_baseline.json` holds the data subset sizes, model and optimizer
+settings and the seed (starting defaults, not tuned). Each epoch prints training
+loss/accuracy and validation loss/accuracy. Outputs in `output_dir`:
+
+| file | content |
+|------|---------|
+| `best.pt` | checkpoint with the highest validation accuracy |
+| `last.pt` | checkpoint after the last epoch |
+| `history.json` | per-epoch train/valid loss and accuracy |
+| `curves.png` | loss and accuracy curves |
+| `config.json` | resolved config |
+
+Checkpoints also store the categories, normalization scale factor and config, so
+evaluation reproduces the training preprocessing.
+
+### 4. Evaluate (final test)
+
+Select the model on validation accuracy, then evaluate on the test split once:
+
+```bash
+python -m src.evaluate --checkpoint results/lstm_baseline/best.pt --split test
+```
+
+This prints and writes `metrics_test.json` next to the checkpoint.
+
+### Sketch embeddings for retrieval
+
+`SketchClassifier.embed(strokes, lengths)` returns `z`, and
+`model(strokes, lengths, return_embedding=True)` returns `(logits, z)`. To dump
+embeddings for a whole split:
+
+```bash
+python -m src.evaluate --checkpoint results/lstm_baseline/best.pt --split train \
+    --save-embeddings results/lstm_baseline/train_embeddings.npz
+```
+
+The `.npz` contains `embeddings`, `labels`, `preds` and `categories`.
+
+### Swapping the encoder
+
+`SketchClassifier` only needs an encoder with `forward(strokes, lengths) -> z`
+and an `embedding_dim` attribute. To add a Transformer, implement that interface
+in `src/models/transformer.py` and register it in `build_model`
+(`src/models/classifier.py`), then set `"encoder"` in the config.
+
 ## Evaluation Plan
 
 - **Primary metric:** classification accuracy
@@ -78,13 +180,19 @@ vector-sketch-classification/
 ├── data/              # Local data only (not committed); see data/README.md
 ├── notebooks/         # Exploration notebooks
 ├── src/
-│   ├── data/          # Data loading and preprocessing
+│   ├── data/
+│   │   └── quickdraw.py   # Sketch-RNN .npz dataset, padding collate, loaders
 │   ├── models/
-│   │   ├── rnn.py         # RNN baseline
+│   │   ├── rnn.py         # RNN baseline (LSTM encoder)
+│   │   ├── classifier.py  # Encoder -> z -> linear head; build_model
 │   │   ├── transformer.py # Transformer classifier
 │   │   └── retrieval.py   # Retrieval-augmented classifier
+│   ├── engine.py      # Shared train/eval loops, embedding extraction
+│   ├── utils.py       # Seeding, checkpoints, plotting
 │   ├── train.py
 │   └── evaluate.py
+├── tests/
+│   └── smoke_test.py  # End-to-end smoke test (synthetic or tiny real subset)
 ├── configs/           # Experiment configs
 ├── results/           # Experiment outputs
 └── docs/              # Proposal, reports, notes
@@ -95,10 +203,10 @@ vector-sketch-classification/
 - [x] Project proposal
 - [x] Repository setup
 - [ ] Literature review
-- [ ] Choose deep learning framework
+- [x] Choose deep learning framework (PyTorch)
 - [ ] Dataset subset selection and preprocessing
 - [ ] Train/validation/test splits
-- [ ] RNN baseline
+- [ ] RNN baseline (pipeline implemented, not yet trained/tuned)
 - [ ] Transformer classifier
 - [ ] Retrieval-augmented classifier
 - [ ] Ablations (top-k, similar vs. random retrieval)
