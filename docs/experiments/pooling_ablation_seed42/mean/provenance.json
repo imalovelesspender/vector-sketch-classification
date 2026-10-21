@@ -1,0 +1,29 @@
+{
+  "historical_commit": "5fe0e29ee627d1a36f979a52a7659eca2c761878",
+  "source_hashes": {
+    "configs/lstm_baseline.json": "523c337139147e8ddad62b3998a7c4bda00e552bfeba16feeadcb31763a7ead3",
+    "src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/data/.gitkeep": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/data/__init__.py": "9592485ccdeb9f0ee3166125cd827f85ef29769def91638642371a107620377d",
+    "src/data/quickdraw.py": "918323d6bbbd42eb4d596aafb77ee78b58d3a454508bd0602b94d68fc759b025",
+    "src/engine.py": "f932604434e34b5d8dd01be119044878bc7a9501df681726912a51f8ef3a8910",
+    "src/evaluate.py": "8cd0c024bdb84700fad294fe061a633043bcd3ebd858065e3492c6334b2badf0",
+    "src/models/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/models/classifier.py": "611ce74792496d5ed7209f5433d5ad695698077e1ea5c6cd3b0bf12cb54297e6",
+    "src/models/retrieval.py": "d7e7625a22644c9782ad6a69f03878818f586115921c1be32dd576eef99a0c8b",
+    "src/models/rnn.py": "0afe298744475da5bc57ff1a677c884e4bc5293e6ada7230297ab84ab26c09ae",
+    "src/models/transformer.py": "f8da57342c19bc9f9807d640508a01ae479ed96714c085acdb5300011d87aafd",
+    "src/train.py": "befb9806adc16214ba3658935c1c2b5fce09a23bea9475cac853b0d32ccdb668",
+    "src/utils.py": "4bf38f5628c4ca45930303a81d0689c851b3c1b4b9cc067b13d2f8311cdf41fa",
+    "psc_run/run_processed.py": "a91c83b61bc257da3d2dc27cf6ad1a1fb5d11685439a26d2e7749b51c6065d2a"
+  },
+  "runner_sha256": "81a20b7741ca6fa79f189e241a90d56dd0f361bfd11a33c08f2f1dd9ef353339",
+  "slurm_account": "cis260329p",
+  "slurm_job_id": "49533483",
+  "gpu": "Tesla V100-SXM2-32GB",
+  "torch": "2.11.0+cu126",
+  "reference_run": "/ocean/projects/cis260329p/slin44/pooling_ablation_seed42/last",
+  "exact_reference_ids_verified": true,
+  "test_evaluated": false,
+  "data_loading_seconds": 372.69449163088575
+}

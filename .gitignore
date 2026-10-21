@@ -21,3 +21,10 @@ venv/
 
 # macOS
 .DS_Store
+
+# Full pooling run artifacts; compact reports live under docs/experiments/.
+results/*
+!results/.gitkeep
+!results/README.md
+.local_packages/
+pooling_ablation_results_download.zip
