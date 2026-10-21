@@ -1,0 +1,10 @@
+{
+  "loss": 0.9220792184069537,
+  "acc": 0.7540173913043479,
+  "top5_acc": 0.9377043478260869,
+  "split": "test",
+  "num_samples": 172500,
+  "checkpoint": "/ocean/projects/cis260329p/slin44/pooling_ablation_seed42/last/best.pt",
+  "epoch": 10,
+  "evaluation_seconds": 7.901962339878082
+}

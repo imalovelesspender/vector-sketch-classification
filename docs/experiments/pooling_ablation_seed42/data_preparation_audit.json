@@ -1,0 +1,16 @@
+{
+  "complete": true,
+  "official_source_checksums_verified": true,
+  "all_shards_readback_verified": true,
+  "normalization_recomputed_from_all_training_points": true,
+  "manifest_sha256": "9a8f0be21554ce7d6322f64756e52f6b70b47bb7b7df09a9051fe3f9131fe933",
+  "preprocessor_sha256": "3ee18a4115f0ee611ad8ebe0492581386ef33dcd5831d758b6b58f111f7f88ab",
+  "source_archives": 345,
+  "split_counts": {
+    "train": 43988874,
+    "valid": 862500,
+    "test": 862500
+  },
+  "scale": 0.12035210854952101,
+  "elapsed_seconds": 1716.299663854763
+}
