@@ -1,0 +1,94 @@
+PyTorch 2.11-----------------------------
+
+Description
+-----------
+The module provides a development environment for Artificial
+Intelligence(AI)/Machine Learning(ML)/Big Data(BD) on top of Python 3.
+
+Module contents
+---------------
+Several popular libraries are included in this environment, such as:
+    bokeh, matplotlib, mkl, numba, numpy, pandas, pillow, scikit-learn, theano,
+pytorch.
+
+To check the full list of available packages in this environment, first
+activate it and then run the command
+    conda list
+
+* cuda-toolkit 12.6.3
+* gpustat 1.1.1
+* keras 3.14.0
+* matplotlib 3.10.9
+* numba 0.65.1
+* numpy 2.4.3
+* pandas 3.0.2
+* pillow 12.1.1
+* scikit-image 0.26.0
+* scikit-learn 1.8.0
+* scipy 1.17.1
+* tensorboard 2.20.0
+* torch 2.11.0+cu126
+* torch-cluster 1.6.3+pt211cu126
+* torch-geometric 2.7.0
+* torch-scatter 2.1.2+pt211cu126
+* torch-sparse 0.6.18+pt211cu126
+* torchaudio 2.11.0+cu126
+* torchmetrics 1.0.3
+* torchvision 0.26.0+cu126
+* tqdm 4.66.5
+* transformers 5.7.0
+* uv 0.11.9
+
+To customize this environment, create an empty venv in a writable directory:
+    cd $LOCAL
+    # This is using a central Python 3.13 version, feel free to customize as
+needed
+    uv venv --python /opt/packages/uv/python/cpython-3.13.7-linux-x86_64-gnu
+
+Then activate it, and install the module packages from the original central
+environment:
+    source .venv/bin/activate
+    cp /opt/packages/AI/pytorch_26.05-py3/{pyproject.toml,uv.lock} .
+    uv sync --cache-dir $LOCAL/uv_cache --frozen
+
+Finally, proceed with your customization.
+    uv pip install PACKAGE # This environment is based on UV.
+https://docs.astral.sh/uv/
+
+Module Activation
+-------------------
+The following commands have been executed for activating the module:
+    # source $ENV/bin/activate
+    # (/opt/packages/AI/pytorch_26.05-py3) USERNAME@BRIDGES-2:~ $ # << Your
+prompt should have changed to something similar.
+
+For deactivating this module, run either of the following commands:
+    deactivate
+    # or
+    module unload AI/pytorch_26.05-py3
+[1;32mThe module has been activated and is ready to be used.[0m
+
+/usr/share/lmod/lmod/init/bash: line 70: deactivate: command not found
+HISTORICAL SOURCE HASHES VERIFIED
+LOADING train: 345 classes, at most 5000 each
+LOADED train: 1725000 samples
+LOADING valid: 345 classes, at most 500 each
+LOADED valid: 172500 samples
+EXACT train SAMPLE IDS VERIFIED AGAINST BILSTM-256 BASELINE
+EXACT valid SAMPLE IDS VERIFIED AGAINST BILSTM-256 BASELINE
+DATA READY in 437.1s; train=1725000 valid=172500
+BEGIN FORMAL DIRECTIONALITY ABLATION bidirectional=False hidden=512 embedding=512 classes=345 parameters=1235801
+device=cuda classes=345 train=1725000 valid=172500 scale_factor=1.0000
+epoch   1 | train loss 2.0407 acc 0.5186 | valid loss 1.2103 acc 0.6810
+epoch   2 | train loss 1.0654 acc 0.7163 | valid loss 1.0022 acc 0.7317
+epoch   3 | train loss 0.9096 acc 0.7542 | valid loss 0.9406 acc 0.7477
+epoch   4 | train loss 0.8276 acc 0.7741 | valid loss 0.9167 acc 0.7536
+epoch   5 | train loss 0.7717 acc 0.7875 | valid loss 0.8930 acc 0.7594
+epoch   6 | train loss 0.7286 acc 0.7979 | valid loss 0.8881 acc 0.7624
+epoch   7 | train loss 0.6929 acc 0.8067 | valid loss 0.8912 acc 0.7624
+epoch   8 | train loss 0.6628 acc 0.8142 | valid loss 0.8913 acc 0.7623
+epoch   9 | train loss 0.6374 acc 0.8204 | valid loss 0.8997 acc 0.7622
+epoch  10 | train loss 0.6150 acc 0.8258 | valid loss 0.9108 acc 0.7599
+best valid acc 0.7624; outputs in results/lstm_345_uni512
+valid: loss 0.8881 acc 0.7624 (n=172500)
+345-CLASS TRAINING AND CHECKPOINT VALIDATION COMPLETED; TEST SPLIT UNTOUCHED

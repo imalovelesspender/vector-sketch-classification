@@ -1,0 +1,79 @@
+PyTorch 2.11-----------------------------
+
+Description
+-----------
+The module provides a development environment for Artificial
+Intelligence(AI)/Machine Learning(ML)/Big Data(BD) on top of Python 3.
+
+Module contents
+---------------
+Several popular libraries are included in this environment, such as:
+    bokeh, matplotlib, mkl, numba, numpy, pandas, pillow, scikit-learn, theano,
+pytorch.
+
+To check the full list of available packages in this environment, first
+activate it and then run the command
+    conda list
+
+* cuda-toolkit 12.6.3
+* gpustat 1.1.1
+* keras 3.14.0
+* matplotlib 3.10.9
+* numba 0.65.1
+* numpy 2.4.3
+* pandas 3.0.2
+* pillow 12.1.1
+* scikit-image 0.26.0
+* scikit-learn 1.8.0
+* scipy 1.17.1
+* tensorboard 2.20.0
+* torch 2.11.0+cu126
+* torch-cluster 1.6.3+pt211cu126
+* torch-geometric 2.7.0
+* torch-scatter 2.1.2+pt211cu126
+* torch-sparse 0.6.18+pt211cu126
+* torchaudio 2.11.0+cu126
+* torchmetrics 1.0.3
+* torchvision 0.26.0+cu126
+* tqdm 4.66.5
+* transformers 5.7.0
+* uv 0.11.9
+
+To customize this environment, create an empty venv in a writable directory:
+    cd $LOCAL
+    # This is using a central Python 3.13 version, feel free to customize as
+needed
+    uv venv --python /opt/packages/uv/python/cpython-3.13.7-linux-x86_64-gnu
+
+Then activate it, and install the module packages from the original central
+environment:
+    source .venv/bin/activate
+    cp /opt/packages/AI/pytorch_26.05-py3/{pyproject.toml,uv.lock} .
+    uv sync --cache-dir $LOCAL/uv_cache --frozen
+
+Finally, proceed with your customization.
+    uv pip install PACKAGE # This environment is based on UV.
+https://docs.astral.sh/uv/
+
+Module Activation
+-------------------
+The following commands have been executed for activating the module:
+    # source $ENV/bin/activate
+    # (/opt/packages/AI/pytorch_26.05-py3) USERNAME@BRIDGES-2:~ $ # << Your
+prompt should have changed to something similar.
+
+For deactivating this module, run either of the following commands:
+    deactivate
+    # or
+    module unload AI/pytorch_26.05-py3
+[1;32mThe module has been activated and is ready to be used.[0m
+
+/usr/share/lmod/lmod/init/bash: line 70: deactivate: command not found
+REFERENCE CONFIG MATCHES ARCHIVED BILSTM-256 PROTOCOL (paths, output_dir, manifest hash aside)
+bi256: embedding_dim=512 parameters=711513
+uni512: embedding_dim=512 parameters=1235801
+uni256: embedding_dim=256 parameters=355929
+PREFLIGHT PASSED: protocol, source hashes, verified data, reference config, fresh outputs, syntax, model sizes
+The quota for Project directory /ocean/projects/cis260329p
+Storage quota: 100.00GiB
+ Storage used: 41.94GiB

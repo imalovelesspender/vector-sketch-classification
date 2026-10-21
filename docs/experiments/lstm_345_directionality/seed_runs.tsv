@@ -1,0 +1,10 @@
+task	output_dir	bidirectional	hidden_dim	train_seed
+0	results/lstm_345_uni378	false	378	42
+1	results/lstm_345_bi256_s43	true	256	43
+2	results/lstm_345_uni512_s43	false	512	43
+3	results/lstm_345_uni256_s43	false	256	43
+4	results/lstm_345_uni378_s43	false	378	43
+5	results/lstm_345_bi256_s44	true	256	44
+6	results/lstm_345_uni512_s44	false	512	44
+7	results/lstm_345_uni256_s44	false	256	44
+8	results/lstm_345_uni378_s44	false	378	44

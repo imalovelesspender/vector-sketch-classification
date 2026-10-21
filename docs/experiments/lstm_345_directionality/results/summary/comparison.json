@@ -1,0 +1,54 @@
+{
+  "rows": [
+    {
+      "run": "BiLSTM-256x2",
+      "bidirectional": true,
+      "hidden_dim": 256,
+      "embedding_dim": 512,
+      "parameters": 711513,
+      "best_epoch": 10,
+      "valid_acc": 0.7519304347826087,
+      "valid_loss": 0.9287088904947475,
+      "test_acc": 0.7540173913043479,
+      "test_loss": 0.9220792236106983,
+      "final_train_acc": 0.7967657971014492,
+      "training_minutes": null,
+      "output_dir": "results/lstm_345_bi256"
+    },
+    {
+      "run": "UniLSTM-512",
+      "bidirectional": false,
+      "hidden_dim": 512,
+      "embedding_dim": 512,
+      "parameters": 1235801,
+      "best_epoch": 6,
+      "valid_acc": 0.7624231884057971,
+      "valid_loss": 0.8880533357260884,
+      "test_acc": 0.7621913043478261,
+      "test_loss": 0.8834344209753948,
+      "final_train_acc": 0.8257831884057971,
+      "training_minutes": 37.037522401916796,
+      "output_dir": "results/lstm_345_uni512"
+    },
+    {
+      "run": "UniLSTM-256",
+      "bidirectional": false,
+      "hidden_dim": 256,
+      "embedding_dim": 256,
+      "parameters": 355929,
+      "best_epoch": 10,
+      "valid_acc": 0.7427304347826087,
+      "valid_loss": 0.9669807713052501,
+      "test_acc": 0.7419420289855072,
+      "test_loss": 0.9651266015647114,
+      "final_train_acc": 0.7653634782608696,
+      "training_minutes": 21.705040026432833,
+      "output_dir": "results/lstm_345_uni256"
+    }
+  ],
+  "sample_ids_sha256": {
+    "train": "67e6b8afdbd1d09ece950dd56fa1f03e1495aa12423763a3e6baf9165552bf0b",
+    "valid": "97160becfbfc1101c3a212d64ff5b57d3ce90b337091de026a7a0565e4e21da7"
+  },
+  "note": "single seed; checkpoint selected on validation; test evaluated once afterwards"
+}

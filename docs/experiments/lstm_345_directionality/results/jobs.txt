@@ -1,0 +1,20 @@
+             JobID              JobName      State ExitCode    Elapsed               Start                 End        NodeList                                          AllocTRES 
+------------------ -------------------- ---------- -------- ---------- ------------------- ------------------- --------------- -------------------------------------------------- 
+          49532872        qd-preprocess  COMPLETED      0:0   00:34:08 2026-10-21T00:50:32 2026-10-21T01:24:40            v003 billing=5,cpu=5,gres/gpu:v100-32=1,gres/gpu=1,mem+ 
+    49532872.batch                batch  COMPLETED      0:0   00:34:08 2026-10-21T00:50:32 2026-10-21T01:24:40            v003 cpu=5,gres/gpu:v100-32=1,gres/gpu=1,mem=63000M,no+ 
+   49532872.extern               extern  COMPLETED      0:0   00:34:08 2026-10-21T00:50:32 2026-10-21T01:24:40            v003 billing=5,cpu=5,gres/gpu:v100-32=1,gres/gpu=1,mem+ 
+          49532873         qd-preflight  COMPLETED      0:0   00:00:09 2026-10-21T01:26:32 2026-10-21T01:26:41            v003 billing=5,cpu=5,gres/gpu:v100-32=1,gres/gpu=1,mem+ 
+    49532873.batch                batch  COMPLETED      0:0   00:00:09 2026-10-21T01:26:32 2026-10-21T01:26:41            v003 cpu=5,gres/gpu:v100-32=1,gres/gpu=1,mem=63000M,no+ 
+   49532873.extern               extern  COMPLETED      0:0   00:00:09 2026-10-21T01:26:32 2026-10-21T01:26:41            v003 billing=5,cpu=5,gres/gpu:v100-32=1,gres/gpu=1,mem+ 
+          49532875    qd-direction-test  COMPLETED      0:0   00:01:13 2026-10-21T03:38:32 2026-10-21T03:39:45            v009 billing=5,cpu=5,gres/gpu:v100-32=1,gres/gpu=1,mem+ 
+    49532875.batch                batch  COMPLETED      0:0   00:01:13 2026-10-21T03:38:32 2026-10-21T03:39:45            v009 cpu=5,gres/gpu:v100-32=1,gres/gpu=1,mem=63000M,no+ 
+   49532875.extern               extern  COMPLETED      0:0   00:01:13 2026-10-21T03:38:32 2026-10-21T03:39:45            v009 billing=5,cpu=5,gres/gpu:v100-32=1,gres/gpu=1,mem+ 
+        49532874_0         qd-direction  COMPLETED      0:0   00:45:59 2026-10-21T01:30:33 2026-10-21T02:16:32            v003 billing=5,cpu=5,gres/gpu:v100-32=1,gres/gpu=1,mem+ 
+  49532874_0.batch                batch  COMPLETED      0:0   00:45:59 2026-10-21T01:30:33 2026-10-21T02:16:32            v003 cpu=5,gres/gpu:v100-32=1,gres/gpu=1,mem=63000M,no+ 
+ 49532874_0.extern               extern  COMPLETED      0:0   00:45:59 2026-10-21T01:30:33 2026-10-21T02:16:32            v003 billing=5,cpu=5,gres/gpu:v100-32=1,gres/gpu=1,mem+ 
+        49532874_1         qd-direction  COMPLETED      0:0   00:44:37 2026-10-21T02:18:32 2026-10-21T03:03:09            v009 billing=5,cpu=5,gres/gpu:v100-32=1,gres/gpu=1,mem+ 
+  49532874_1.batch                batch  COMPLETED      0:0   00:44:37 2026-10-21T02:18:32 2026-10-21T03:03:09            v009 cpu=5,gres/gpu:v100-32=1,gres/gpu=1,mem=63000M,no+ 
+ 49532874_1.extern               extern  COMPLETED      0:0   00:44:37 2026-10-21T02:18:32 2026-10-21T03:03:09            v009 billing=5,cpu=5,gres/gpu:v100-32=1,gres/gpu=1,mem+ 
+        49532874_2         qd-direction  COMPLETED      0:0   00:28:04 2026-10-21T03:06:32 2026-10-21T03:34:36            v009 billing=5,cpu=5,gres/gpu:v100-32=1,gres/gpu=1,mem+ 
+  49532874_2.batch                batch  COMPLETED      0:0   00:28:04 2026-10-21T03:06:32 2026-10-21T03:34:36            v009 cpu=5,gres/gpu:v100-32=1,gres/gpu=1,mem=63000M,no+ 
+ 49532874_2.extern               extern  COMPLETED      0:0   00:28:04 2026-10-21T03:06:32 2026-10-21T03:34:36            v009 billing=5,cpu=5,gres/gpu:v100-32=1,gres/gpu=1,mem+ 
