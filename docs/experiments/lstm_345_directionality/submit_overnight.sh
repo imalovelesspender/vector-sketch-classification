@@ -38,7 +38,9 @@ du -sh "$PREP/data/sketchrnn"
 
 # Budget and storage before submitting anything.
 my_quotas 2>&1 | grep -A3 'Project directory'
-balance=$(projects 2>&1 | grep -m1 -oE '[0-9,]+ / [0-9,]+ SU' | cut -d' ' -f1 | tr -d ,)
+# No early-exiting reader in a pipe: under pipefail its SIGPIPE would abort the script.
+projects_out=$(projects 2>&1 < /dev/null)
+balance=$(awk 'match($0, /[0-9,]+ \/ [0-9,]+ SU/) {s = substr($0, RSTART, RLENGTH); sub(/ .*/, "", s); gsub(/,/, "", s); print s; exit}' <<< "$projects_out")
 echo "GPU SU balance: $balance"
 test "$balance" -ge "$MIN_SU"
 
