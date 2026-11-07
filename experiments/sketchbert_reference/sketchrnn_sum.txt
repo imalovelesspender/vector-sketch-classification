@@ -1,0 +1,345 @@
+/home/lhy/datasets/QuickDraw/sketchrnn/flashlight.full.npz	212413	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/guitar.full.npz	104115	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/tiger.full.npz	104476	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/floor lamp.full.npz	145187	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/stethoscope.full.npz	134945	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/helmet.full.npz	105229	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/ambulance.full.npz	129080	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/violin.full.npz	191566	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/streetlight.full.npz	107657	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/wine bottle.full.npz	109339	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/smiley face.full.npz	107974	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/hammer.full.npz	103121	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/onion.full.npz	114337	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/camel.full.npz	105224	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/rifle.full.npz	150870	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/diamond.full.npz	115869	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/cake.full.npz	108131	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/shovel.full.npz	101815	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/crayon.full.npz	113491	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/basketball.full.npz	116797	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/cloud.full.npz	103707	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/backpack.full.npz	108836	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/bread.full.npz	104282	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/banana.full.npz	273964	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/hamburger.full.npz	112714	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/trombone.full.npz	162459	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/golf club.full.npz	173267	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/paper clip.full.npz	110205	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/parachute.full.npz	110028	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/motorbike.full.npz	148432	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/elephant.full.npz	110061	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/cookie.full.npz	113767	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/ice cream.full.npz	107258	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/hospital.full.npz	147120	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/soccer ball.full.npz	108477	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/remote control.full.npz	103113	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/alarm clock.full.npz	106426	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/key.full.npz	140380	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/scissors.full.npz	106397	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/bear.full.npz	116378	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/jail.full.npz	103718	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/bicycle.full.npz	110055	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/goatee.full.npz	166494	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/saw.full.npz	104375	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/paintbrush.full.npz	163839	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/fireplace.full.npz	135300	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/stairs.full.npz	111899	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/train.full.npz	110696	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/spider.full.npz	185039	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/door.full.npz	104680	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/bulldozer.full.npz	164177	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/square.full.npz	109818	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/house plant.full.npz	106491	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/washing machine.full.npz	104769	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/wine glass.full.npz	114852	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/toilet.full.npz	112701	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/elbow.full.npz	108647	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/toothbrush.full.npz	108628	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/boomerang.full.npz	123794	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/swing set.full.npz	104318	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/belt.full.npz	168720	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/The Eiffel Tower.full.npz	118210	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/river.full.npz	115031	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/pool.full.npz	116104	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/flamingo.full.npz	107708	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/paint can.full.npz	107015	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/blackberry.full.npz	110745	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/sheep.full.npz	109184	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/piano.full.npz	100344	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/sword.full.npz	107069	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/mosquito.full.npz	105899	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/octopus.full.npz	130370	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/firetruck.full.npz	194716	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/tent.full.npz	113994	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/zigzag.full.npz	104999	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/sailboat.full.npz	118977	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/horse.full.npz	156680	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/lighter.full.npz	104662	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/whale.full.npz	100282	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/pickup truck.full.npz	112970	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/bed.full.npz	98730	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/ceiling fan.full.npz	99748	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/jacket.full.npz	188102	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/pond.full.npz	105570	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/finger.full.npz	149216	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/book.full.npz	103492	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/computer.full.npz	107638	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/kangaroo.full.npz	152268	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/lipstick.full.npz	112088	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/diving board.full.npz	259626	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/palm tree.full.npz	105431	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/pineapple.full.npz	108160	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/drums.full.npz	119383	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/garden hose.full.npz	105785	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/sun.full.npz	116641	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/telephone.full.npz	110710	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/bucket.full.npz	108262	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/campfire.full.npz	115617	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/screwdriver.full.npz	100599	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/binoculars.full.npz	107605	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/bus.full.npz	145415	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/cactus.full.npz	113757	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/eye.full.npz	109063	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/sandwich.full.npz	114443	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/necklace.full.npz	103962	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/tennis racquet.full.npz	204632	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/feather.full.npz	104515	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/microwave.full.npz	113793	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/speedboat.full.npz	164888	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/broom.full.npz	100314	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/syringe.full.npz	118450	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/trumpet.full.npz	148909	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/angel.full.npz	130301	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/garden.full.npz	138288	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/swan.full.npz	132670	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/apple.full.npz	127188	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/shorts.full.npz	109070	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/ear.full.npz	106723	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/toothpaste.full.npz	114564	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/toe.full.npz	133758	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/matches.full.npz	126472	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/line.full.npz	127667	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/tractor.full.npz	100941	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/sleeping bag.full.npz	103687	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/dragon.full.npz	107064	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/flower.full.npz	125644	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/monkey.full.npz	110012	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/lighthouse.full.npz	140064	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/snorkel.full.npz	134630	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/light bulb.full.npz	104447	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/ladder.full.npz	109075	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/giraffe.full.npz	110617	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/marker.full.npz	282550	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/postcard.full.npz	109476	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/cannon.full.npz	122759	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/moustache.full.npz	158203	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/knee.full.npz	237865	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/anvil.full.npz	109428	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/spoon.full.npz	108447	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/cell phone.full.npz	104205	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/mug.full.npz	133450	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/car.full.npz	159758	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/steak.full.npz	106024	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/school bus.full.npz	105365	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/passport.full.npz	130549	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/crocodile.full.npz	110979	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/arm.full.npz	104671	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/pig.full.npz	163945	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/bat.full.npz	102080	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/hand.full.npz	260802	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/hat.full.npz	197098	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/butterfly.full.npz	101788	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/triangle.full.npz	108983	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/eraser.full.npz	103207	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/pencil.full.npz	106032	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/pillow.full.npz	103483	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/bench.full.npz	111450	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/hurricane.full.npz	117902	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/cruise ship.full.npz	106757	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/calendar.full.npz	285334	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/peanut.full.npz	110069	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/baseball bat.full.npz	107193	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/roller coaster.full.npz	125142	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/tooth.full.npz	109098	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/dolphin.full.npz	105408	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/lobster.full.npz	121267	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/squirrel.full.npz	137188	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/chair.full.npz	200407	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/microphone.full.npz	103938	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/castle.full.npz	105852	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/snail.full.npz	116576	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/rain.full.npz	117843	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/mountain.full.npz	112610	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/sink.full.npz	183212	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/megaphone.full.npz	118760	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/star.full.npz	119153	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/yoga.full.npz	249734	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/dog.full.npz	132259	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/frog.full.npz	138658	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/clarinet.full.npz	109332	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/see saw.full.npz	115781	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/penguin.full.npz	224324	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/traffic light.full.npz	108361	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/ocean.full.npz	114157	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/bush.full.npz	104388	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/bird.full.npz	115848	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/peas.full.npz	140689	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/stove.full.npz	100457	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/crab.full.npz	110027	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/fish.full.npz	117306	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/sea turtle.full.npz	103052	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/hourglass.full.npz	118205	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/map.full.npz	104252	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/squiggle.full.npz	102792	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/zebra.full.npz	126127	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/fan.full.npz	117966	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/sock.full.npz	180487	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/umbrella.full.npz	108100	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/octagon.full.npz	141214	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/vase.full.npz	110035	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/church.full.npz	144351	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/panda.full.npz	97480	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/envelope.full.npz	118108	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/dishwasher.full.npz	149090	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/cooler.full.npz	241181	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/tornado.full.npz	124244	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/rollerskates.full.npz	103186	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/rainbow.full.npz	111190	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/waterslide.full.npz	162231	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/grapes.full.npz	135418	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/toaster.full.npz	106061	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/snake.full.npz	105751	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/birthday cake.full.npz	126662	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/harp.full.npz	253225	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/wheel.full.npz	118418	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/skyscraper.full.npz	163646	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/skateboard.full.npz	111360	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/leg.full.npz	102116	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/fire hydrant.full.npz	118743	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/The Mona Lisa.full.npz	104644	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/beard.full.npz	143968	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/eyeglasses.full.npz	198966	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/lantern.full.npz	130961	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/van.full.npz	144545	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/bowtie.full.npz	112896	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/strawberry.full.npz	105857	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/rake.full.npz	134382	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/saxophone.full.npz	102211	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/animal migration.full.npz	119586	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/coffee cup.full.npz	161542	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/asparagus.full.npz	147481	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/popsicle.full.npz	110152	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/mouse.full.npz	156311	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/ant.full.npz	108187	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/airplane.full.npz	133058	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/crown.full.npz	117206	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/teapot.full.npz	110090	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/circle.full.npz	107469	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/stereo.full.npz	105859	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/bathtub.full.npz	153529	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/hedgehog.full.npz	103706	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/pants.full.npz	126391	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/lion.full.npz	104003	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/bridge.full.npz	114967	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/owl.full.npz	148356	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/cup.full.npz	114445	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/knife.full.npz	152727	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/sweater.full.npz	104756	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/candle.full.npz	123114	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/mailbox.full.npz	112432	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/snowman.full.npz	303397	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/cat.full.npz	106337	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/purse.full.npz	106817	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/foot.full.npz	178524	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/shoe.full.npz	104424	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/grass.full.npz	106369	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/compass.full.npz	110850	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/teddy-bear.full.npz	156982	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/The Great Wall of China.full.npz	170161	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/blueberry.full.npz	110950	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/helicopter.full.npz	140053	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/fence.full.npz	112573	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/hockey stick.full.npz	113572	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/moon.full.npz	104925	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/cow.full.npz	106125	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/mouth.full.npz	116931	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/cello.full.npz	130480	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/spreadsheet.full.npz	148668	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/television.full.npz	106946	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/lightning.full.npz	133193	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/hot tub.full.npz	103621	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/axe.full.npz	107997	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/duck.full.npz	117391	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/fork.full.npz	108926	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/flying saucer.full.npz	132187	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/radio.full.npz	117381	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/submarine.full.npz	107832	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/flip flops.full.npz	105194	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/camouflage.full.npz	150614	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/lollipop.full.npz	112368	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/police car.full.npz	112340	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/donut.full.npz	122453	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/bracelet.full.npz	102783	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/broccoli.full.npz	114993	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/nail.full.npz	138653	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/calculator.full.npz	111059	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/wristwatch.full.npz	141809	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/leaf.full.npz	108285	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/hockey puck.full.npz	179254	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/baseball.full.npz	116911	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/dresser.full.npz	107207	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/canoe.full.npz	107092	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/bandage.full.npz	128556	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/bee.full.npz	104559	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/basket.full.npz	102313	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/shark.full.npz	109363	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/bottlecap.full.npz	134202	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/laptop.full.npz	231911	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/table.full.npz	111979	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/stop sign.full.npz	103498	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/brain.full.npz	124006	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/aircraft carrier.full.npz	100380	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/scorpion.full.npz	144482	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/keyboard.full.npz	165842	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/couch.full.npz	103381	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/rabbit.full.npz	135234	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/clock.full.npz	104938	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/face.full.npz	141652	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/beach.full.npz	108173	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/pear.full.npz	101607	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/headphones.full.npz	102418	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/mushroom.full.npz	124736	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/skull.full.npz	109383	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/hot air balloon.full.npz	109304	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/parrot.full.npz	163374	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/t-shirt.full.npz	109246	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/suitcase.full.npz	109738	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/frying pan.full.npz	107308	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/camera.full.npz	111822	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/windmill.full.npz	104048	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/hexagon.full.npz	124712	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/power outlet.full.npz	148458	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/drill.full.npz	119237	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/stitches.full.npz	108280	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/picture frame.full.npz	105540	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/nose.full.npz	175780	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/tree.full.npz	126063	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/truck.full.npz	113681	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/underwear.full.npz	108667	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/chandelier.full.npz	146312	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/oven.full.npz	181651	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/potato.full.npz	293342	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/barn.full.npz	131948	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/string bean.full.npz	103440	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/hot dog.full.npz	160041	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/rhinoceros.full.npz	164975	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/pliers.full.npz	150592	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/carrot.full.npz	115399	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/house.full.npz	117902	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/snowflake.full.npz	100404	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/dumbbell.full.npz	138528	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/pizza.full.npz	112758	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/mermaid.full.npz	157988	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/raccoon.full.npz	103016	2500	2500
+/home/lhy/datasets/QuickDraw/sketchrnn/watermelon.full.npz	115395	2500	2500
