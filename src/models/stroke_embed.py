@@ -10,7 +10,7 @@ Transformer + CLS there, the baseline :class:`LSTMEncoder` here.
     stroke index          --Embedding(max_strokes, d)                            order
     token = shape + location + order, dropout
     (B, S, d) --LSTMEncoder (baseline BiLSTM-256, last state)--> z
-
+(d = 128 for baseline)
 Input: the ``stroke_based`` representation (see ``src.data.stroke_split``).  If a
 batch arrives as ``point_based`` the strokes are grouped here, so both collates work.
 """
