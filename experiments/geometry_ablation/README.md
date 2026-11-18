@@ -85,14 +85,29 @@ Existing caches can be reused without `--prepare` and `--archive-dir`. To repeat
 training with another initialization seed, use `--seed 43` with the same cache.
 The cached sample IDs stay fixed. `--runs NAME ...` selects a subset of configs.
 
-## What is not complete
+## Formal full-data experiments
 
-No 345-class training or final test evaluation has been performed in this work.
-Do not use the development results as replacements for the midterm test scores.
-The shared processed dataset and exact historical sample IDs are needed for a
-direct historical comparison. Without the historical IDs, train new point3 and
-geometry5 controls on a shared, explicitly rebuilt subset instead.
-PSC currently has a full migration outage including storage:
+The formal protocol rebuilds a 345-class cache from the full archives, with 5,000
+train and 500 validation samples per class. It uses Sihui's historical preprocessing
+source and the old adapter's seeded selection rule. Full-data normalization is
+fitted on all training sketches before filtering. Inputs are stored as memory-mapped
+arrays so the complete corpus need not fit in RAM. Raw test arrays are not used.
+
+`pipeline.py` waits for successful cache completion, then runs the 14 configurations
+for a common 20 epochs, with the four basic representation controls first. Every
+epoch saves recoverable state. `run --resume` rejects changed code/config/data
+hashes and resumes the optimizer, model and random states. Final publication is
+conditional on all 14 result checks passing. The pipeline's local state and logs
+are under the workspace's `outputs/geometry5_pipeline_20261118/` and neighboring logs.
+
+Never use development scores as replacements for midterm test results. The exact
+old processed manifest and sample IDs still require independent verification for
+a direct historical comparison. New point3 and geometry5 controls share the rebuilt
+samples with each other. Completed formal results, when available, are archived at
+`docs/experiments/geometry5_345_20261118/` with validation clearly separated from test.
+No final test evaluation is scheduled by this pipeline.
+
+The data were rebuilt because PSC has a full migration outage including storage:
 https://www.psc.edu/b2-migration-2026/
 
 No shared Google documents, main branch, Sohyun branch, W&B account or remote
