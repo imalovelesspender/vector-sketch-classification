@@ -77,8 +77,22 @@ def train(cfg: dict) -> dict:
         data_format=data_cfg.get("data_format", "sketchrnn"),
         normalize=data_cfg.get("normalize", True),
     )
+    from src.data.quickdraw import load_manifest
+    from src.data.stroke_collate import get_collate
+
+    representation = data_cfg.get("representation", "point_based")
+    coordinate_scale = data_cfg.get("coordinate_scale")
+    if representation == "stroke_based" and coordinate_scale is None:
+        manifest = load_manifest(data_cfg["data_dir"]) or {}
+        coordinate_scale = manifest.get("normalization", {}).get("scale", manifest.get("scale_factor"))
+        if coordinate_scale is None:
+            raise ValueError("stroke_based: set data.coordinate_scale or provide manifest.json with normalization.scale")
+        if cfg["model"].get("encoder") == "stroke_embed":
+            cfg["model"].setdefault("coordinate_scale", coordinate_scale)
+    collate_fn = get_collate(representation, coordinate_scale)
     loaders = build_dataloaders(
-        datasets, data_cfg.get("batch_size", 64), data_cfg.get("num_workers", 0), seed
+        datasets, data_cfg.get("batch_size", 64), data_cfg.get("num_workers", 0), seed,
+        collate_fn=collate_fn
     )
     train_ds = datasets["train"]
     print(

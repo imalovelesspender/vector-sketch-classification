@@ -6,6 +6,13 @@ import numpy as np
 import torch
 import torch.nn as nn
 
+from src.data.stroke_split import STROKE_KEYS
+
+
+def _extra_inputs(batch: dict, device: torch.device) -> dict:
+    """Stroke tensors from the stroke_based collate, if present (else empty)."""
+    return {k: batch[k].to(device) for k in STROKE_KEYS if k in batch}
+
 
 def run_epoch(
     model: nn.Module,
@@ -27,7 +34,7 @@ def run_epoch(
             strokes = batch["strokes"].to(device)
             lengths = batch["lengths"]
             labels = batch["labels"].to(device)
-            logits = model(strokes, lengths)
+            logits = model(strokes, lengths, **_extra_inputs(batch, device))
             loss = criterion(logits, labels)
             if train:
                 optimizer.zero_grad()
@@ -48,7 +55,8 @@ def extract_embeddings(model: nn.Module, loader, device: torch.device) -> dict:
     zs, labels, preds = [], [], []
     for batch in loader:
         logits, z = model(
-            batch["strokes"].to(device), batch["lengths"], return_embedding=True
+            batch["strokes"].to(device), batch["lengths"], return_embedding=True,
+            **_extra_inputs(batch, device),
         )
         zs.append(z.cpu().numpy())
         labels.append(batch["labels"].numpy())

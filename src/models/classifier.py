@@ -17,14 +17,18 @@ class SketchClassifier(nn.Module):
         self.encoder = encoder
         self.head = nn.Linear(encoder.embedding_dim, num_classes)
 
-    def embed(self, strokes: torch.Tensor, lengths: torch.Tensor) -> torch.Tensor:
-        """Return sketch embeddings ``z`` (B, embedding_dim), e.g. for retrieval."""
-        return self.encoder(strokes, lengths)
+    def embed(self, strokes: torch.Tensor, lengths: torch.Tensor, **extra) -> torch.Tensor:
+        """Return sketch embeddings ``z`` (B, embedding_dim), e.g. for retrieval.
+
+        ``extra`` carries the pre-split stroke tensors from ``collate_strokes``
+        (ignored by encoders that do not take them).
+        """
+        return self.encoder(strokes, lengths, **extra)
 
     def forward(
-        self, strokes: torch.Tensor, lengths: torch.Tensor, return_embedding: bool = False
+        self, strokes: torch.Tensor, lengths: torch.Tensor, return_embedding: bool = False, **extra
     ):
-        z = self.embed(strokes, lengths)
+        z = self.embed(strokes, lengths, **extra)
         logits = self.head(z)
         return (logits, z) if return_embedding else logits
 
@@ -37,6 +41,10 @@ def build_model(model_cfg: dict, input_dim: int, num_classes: int) -> SketchClas
         from .rnn import LSTMEncoder
 
         encoder = LSTMEncoder(input_dim=input_dim, **cfg)
+    elif name == "stroke_embed":
+        from .stroke_embed import StrokeLSTMEncoder
+
+        encoder = StrokeLSTMEncoder(input_dim=input_dim, **cfg)
     else:
         # TODO: register the Transformer encoder here once src/models/transformer.py exists.
         raise ValueError(f"unknown encoder {name!r}")

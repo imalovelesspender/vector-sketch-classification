@@ -299,8 +299,14 @@ def build_dataloaders(
     batch_size: int = 64,
     num_workers: int = 0,
     seed: int = 0,
+    collate_fn=None,
 ) -> Dict[str, DataLoader]:
-    """Wrap datasets in DataLoaders; only the train loader is shuffled."""
+    """Wrap datasets in DataLoaders; only the train loader is shuffled.
+
+    ``collate_fn`` defaults to :func:`collate_sketches`; pass
+    ``src.data.stroke_collate.collate_strokes`` for stroke-level models.
+    """
+    collate_fn = collate_fn or collate_sketches
     loaders = {}
     for split, ds in datasets.items():
         generator = torch.Generator().manual_seed(seed) if split == "train" else None
@@ -308,7 +314,7 @@ def build_dataloaders(
             ds,
             batch_size=batch_size,
             shuffle=(split == "train"),
-            collate_fn=collate_sketches,
+            collate_fn=collate_fn,
             num_workers=num_workers,
             generator=generator,
         )

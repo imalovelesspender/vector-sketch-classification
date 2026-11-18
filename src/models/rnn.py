@@ -71,7 +71,7 @@ class LSTMEncoder(nn.Module):
         self.proj = nn.Linear(pooled_dim, embedding_dim) if embedding_dim else None
         self.embedding_dim = embedding_dim or pooled_dim
 
-    def forward(self, strokes: torch.Tensor, lengths: torch.Tensor) -> torch.Tensor:
+    def forward(self, strokes: torch.Tensor, lengths: torch.Tensor, **_ignored) -> torch.Tensor:
         packed = pack_padded_sequence(
             strokes, lengths.cpu(), batch_first=True, enforce_sorted=False
         )
