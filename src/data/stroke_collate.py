@@ -3,7 +3,7 @@
     point_based   -> the original ``collate_sketches`` (strokes, lengths, labels)
     stroke_based  -> ``collate_stroke_based``: the same three keys plus the stroke
                      tensors from :func:`src.data.stroke_split.group_strokes`
-                     (stroke_pts, stroke_lens, stroke_xy, n_strokes)
+                     (stroke_pts, stroke_lens, stroke_xy, sketch_ids, orders, n_strokes)
 
 Select with ``data.representation`` in the config.  ``coordinate_scale`` must be the
 manifest's ``normalization.scale`` (sigma) so centred coordinates are in bbox units,
@@ -26,7 +26,7 @@ def collate_stroke_based(batch, coordinate_scale: float) -> Dict[str, torch.Tens
     seqs = [torch.as_tensor(s, dtype=torch.float32) for s in seqs]
     lengths = torch.tensor([len(s) for s in seqs], dtype=torch.long)
     strokes = pad_sequence(seqs, batch_first=True, padding_value=0.0)
-    stroke_pts, stroke_lens, stroke_xy, n_strokes = group_strokes(strokes, lengths, coordinate_scale)
+    stroke_pts, stroke_lens, stroke_xy, sketch_ids, orders, n_strokes = group_strokes(strokes, lengths, coordinate_scale)
     return {
         "strokes": strokes,
         "lengths": lengths,
@@ -34,6 +34,8 @@ def collate_stroke_based(batch, coordinate_scale: float) -> Dict[str, torch.Tens
         "stroke_pts": stroke_pts,
         "stroke_lens": stroke_lens,
         "stroke_xy": stroke_xy,
+        "sketch_ids": sketch_ids,
+        "orders": orders,
         "n_strokes": n_strokes,
     }
 

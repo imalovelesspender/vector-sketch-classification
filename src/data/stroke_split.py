@@ -29,7 +29,7 @@ from typing import Tuple
 import torch
 
 REPRESENTATIONS = ("point_based", "stroke_based")
-STROKE_KEYS = ("stroke_pts", "stroke_lens", "stroke_xy", "n_strokes")
+STROKE_KEYS = ("stroke_pts", "stroke_lens", "stroke_xy", "sketch_ids", "orders", "n_strokes")
 
 
 def centred_coordinates(strokes: torch.Tensor, lengths: torch.Tensor, coordinate_scale: float) -> torch.Tensor:
@@ -45,11 +45,17 @@ def centred_coordinates(strokes: torch.Tensor, lengths: torch.Tensor, coordinate
 
 def group_strokes(
     strokes: torch.Tensor, lengths: torch.Tensor, coordinate_scale: float
-) -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
-    """Split (B, T, 3) into strokes (notebook cell 10, ``group_strokes``), vectorised.
+) -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
+    """Split (B, T, 3) into strokes -- same signature as the notebook's ``group_strokes``.
 
-    Returns stroke_pts (N, P, 4), stroke_lens (N,), stroke_xy (N, 2), n_strokes (B,);
-    strokes are sketch-major in drawing order.
+    Returns (notebook names in parentheses)
+        stroke_pts  (N, P, 4)  (padded)          per-stroke local shape, zero-padded
+        stroke_lens (N,)       (stroke_lengths)  points per stroke
+        stroke_xy   (N, 2)     (locations)       centred start point of each stroke
+        sketch_ids  (N,)       (sketch_ids)      which sketch each stroke belongs to
+        orders      (N,)       (orders)          0-based stroke index within its sketch
+        n_strokes   (B,)       (counts)          strokes per sketch
+    Strokes are sketch-major in drawing order.
     """
     B, T, _ = strokes.shape
     dev = strokes.device
@@ -79,4 +85,6 @@ def group_strokes(
     shape = torch.cat([local_xy, (~ends).to(xy.dtype)[:, None], ends.to(xy.dtype)[:, None]], dim=1)
     stroke_pts = strokes.new_zeros(len(first), int(stroke_lens.max()), 4)
     stroke_pts[stroke_ids, ranks] = shape
-    return stroke_pts, stroke_lens, stroke_xy, n_strokes
+    offsets = n_strokes.cumsum(0) - n_strokes
+    orders = torch.arange(len(first), device=dev) - offsets[sketch_ids]
+    return stroke_pts, stroke_lens, stroke_xy, sketch_ids, orders, n_strokes

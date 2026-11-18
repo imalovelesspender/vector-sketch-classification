@@ -21,7 +21,7 @@ from typing import Optional, Tuple
 
 import torch
 import torch.nn as nn
-from torch.nn.utils.rnn import pack_padded_sequence, pad_sequence
+from torch.nn.utils.rnn import pack_padded_sequence
 
 from ..data.stroke_split import group_strokes
 from .rnn import LSTMEncoder
@@ -83,15 +83,20 @@ class StrokeLSTMEncoder(nn.Module):
         stroke_pts: Optional[torch.Tensor] = None,
         stroke_lens: Optional[torch.Tensor] = None,
         stroke_xy: Optional[torch.Tensor] = None,
+        sketch_ids: Optional[torch.Tensor] = None,
+        orders: Optional[torch.Tensor] = None,
         n_strokes: Optional[torch.Tensor] = None,
     ) -> Tuple[torch.Tensor, torch.Tensor]:
         """Stroke tokens ``(B, S, dim)`` and ``n_strokes (B,)``."""
         if stroke_pts is None:  # point_based batch: group here
             if self.coordinate_scale is None:
                 raise ValueError("point_based batch needs model coordinate_scale to group strokes")
-            stroke_pts, stroke_lens, stroke_xy, n_strokes = group_strokes(strokes, lengths, self.coordinate_scale)
+            stroke_pts, stroke_lens, stroke_xy, sketch_ids, orders, n_strokes = group_strokes(
+                strokes, lengths, self.coordinate_scale
+            )
         dev = strokes.device
-        stroke_pts, stroke_xy, n_strokes = stroke_pts.to(dev), stroke_xy.to(dev), n_strokes.to(dev)
+        stroke_pts, stroke_xy = stroke_pts.to(dev), stroke_xy.to(dev)
+        sketch_ids, orders, n_strokes = sketch_ids.to(dev), orders.to(dev), n_strokes.to(dev)
         N = stroke_pts.size(0)
         tok = stroke_pts.new_zeros(N, self.dim)
         if self.shape_lstm is not None:
@@ -103,10 +108,10 @@ class StrokeLSTMEncoder(nn.Module):
         if self.location_embedding is not None:
             tok = tok + self.location_embedding(stroke_xy)
         if self.order_embedding is not None:
-            orders = torch.cat([torch.arange(int(n), device=dev) for n in n_strokes]).clamp(max=self.max_strokes - 1)
-            tok = tok + self.order_embedding(orders)
-        tok = pad_sequence(torch.split(tok, n_strokes.tolist()), batch_first=True)  # (B, S, dim)
-        return self.embedding_dropout(tok), n_strokes
+            tok = tok + self.order_embedding(orders.clamp(max=self.max_strokes - 1))
+        x = tok.new_zeros(strokes.size(0), int(n_strokes.max()), self.dim)   # (B, S, dim), as in the notebook
+        x[sketch_ids, orders] = tok
+        return self.embedding_dropout(x), n_strokes
 
     def forward(self, strokes: torch.Tensor, lengths: torch.Tensor, **stroke_batch) -> torch.Tensor:
         tok, n_strokes = self.tokens(strokes, lengths, **stroke_batch)
