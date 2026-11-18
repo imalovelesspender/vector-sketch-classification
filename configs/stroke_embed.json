@@ -1,0 +1,45 @@
+{
+  "seed": 42,
+  "output_dir": "results/stroke_embed",
+  "data": {
+    "data_dir": "data/processed_full",
+    "categories": [
+      "cat",
+      "apple",
+      "bicycle"
+    ],
+    "train_per_class": 5000,
+    "val_per_class": 500,
+    "test_per_class": 500,
+    "max_seq_len": 250,
+    "stroke_format": "stroke3",
+    "batch_size": 128,
+    "num_workers": 0,
+    "data_format": "processed",
+    "normalize": false,
+    "representation": "stroke_based"
+  },
+  "model": {
+    "encoder": "stroke_embed",
+    "hidden_dim": 256,
+    "num_layers": 1,
+    "bidirectional": true,
+    "dropout": 0.0,
+    "pooling": "last",
+    "embedding_dim": null,
+    "dim": 128,
+    "stroke_hidden": 64,
+    "max_strokes": 250,
+    "use_shape": true,
+    "use_location": true,
+    "use_order": true
+  },
+  "train": {
+    "epochs": 10,
+    "lr": 0.001,
+    "weight_decay": 0.0,
+    "grad_clip": 1.0,
+    "device": "auto"
+  },
+  "_comment": "stroke_based representation (Sihui notebook: centred bbox-unit coordinates, per-stroke local shape) -> stroke_embed encoder (shape+location+order tokens) -> baseline BiLSTM-256. coordinate_scale is read from manifest.json normalization.scale. Ablations: use_order / use_location / use_shape false, one at a time. Baseline = representation point_based + encoder lstm."
+}
