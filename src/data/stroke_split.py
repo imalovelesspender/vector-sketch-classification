@@ -46,7 +46,7 @@ def centred_coordinates(strokes: torch.Tensor, lengths: torch.Tensor, coordinate
 def group_strokes(
     strokes: torch.Tensor, lengths: torch.Tensor, coordinate_scale: float
 ) -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
-    """Split (B, T, 3) into strokes -- same signature as the notebook's ``group_strokes``.
+    """Split (B, T, 3) into strokes``.
 
     Returns (notebook names in parentheses)
         stroke_pts  (N, P, 4)  (padded)          per-stroke local shape, zero-padded
