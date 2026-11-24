@@ -4,6 +4,15 @@ Delta, `/projects/bjwy/sjin5/vector-sketch-classification`, branch `stroke-base/
 Data: Sihui's `processed_full` (345 classes, 5,000 / 500 / 500 per class, >250 points excluded, seed 42).
 Training: Adam lr 0.001, clip 1.0, batch 128; checkpoint by best validation top-1; test evaluated once.
 
+## Models (same data, split, seed 42, 10 epochs, Adam 1e-3, batch 128, clip 1.0, dropout 0, last-state pooling)
+
+| config | input per point / token | encoder | params | role |
+|---|---|---|---|---|
+| `lstm_baseline.json` | (dx, dy, pen) | BiLSTM-256 → Linear(512→345) | 711,513 | reference (Anson's baseline recipe) |
+| `lstm_point_centred.json` | (dx, dy, pen, cx, cy) — centred absolute xy appended in the model (`centred_xy`) | same BiLSTM-256 | 715,609 | control: location information without stroke grouping |
+| `stroke_embed.json` | stroke token = shape (BiLSTM-64×2 → Linear 128) + location Linear(2→128) + order Embedding(250,128) | same BiLSTM-256 over stroke tokens | 1,052,249 | proposed: stroke-level representation (SketchXAI-style) |
+
+
 ## Runs
 
 | run | representation | encoder | top LSTM (hidden / bi / pooling) | token (dim / stroke_hidden / max_strokes) | ablation flags | epochs |
