@@ -1,3 +1,13 @@
+# November 24 deadline change, explicitly approved by the user
+
+The original 20-epoch run is stopped with checkpoints preserved. The active
+experiment is now a separate 14-config screening: all 345 classes, 1,000 train
+and 100 validation samples per class, five epochs per configuration. Old partial
+20-epoch results are not mixed into this table. Final records and conclusions
+will appear in `docs/experiments/geometry5_short_20261124/` after completion.
+
+The notes below are earlier development history, not the current task status.
+
 # Anson experiment status — 2026-11-18
 
 ## What this work implements
