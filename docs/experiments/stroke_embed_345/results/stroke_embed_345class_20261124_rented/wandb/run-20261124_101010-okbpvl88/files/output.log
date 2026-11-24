@@ -1,0 +1,8 @@
+epoch   1 | train loss 2.3913 acc 0.4438 | valid loss 1.6919 acc 0.5769
+epoch   2 | train loss 1.4700 acc 0.6244 | valid loss 1.3613 acc 0.6504
+epoch   3 | train loss 1.2316 acc 0.6786 | valid loss 1.2470 acc 0.6771
+epoch   4 | train loss 1.1066 acc 0.7074 | valid loss 1.1656 acc 0.6965
+epoch   5 | train loss 1.0259 acc 0.7260 | valid loss 1.1189 acc 0.7084
+epoch   6 | train loss 0.9676 acc 0.7400 | valid loss 1.1012 acc 0.7119
+epoch   7 | train loss 0.9223 acc 0.7503 | valid loss 1.0974 acc 0.7148
+epoch   8 | train loss 0.8855 acc 0.7589 | valid loss 1.1003 acc 0.7153

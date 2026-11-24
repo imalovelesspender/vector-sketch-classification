@@ -1,0 +1,89 @@
+config=configs/lstm_baseline.json tag=lstm_baseline epochs=config data=/workspace/processed_subset out=/workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/results/lstm_baseline_345class_20261124_rented
+8070b87c17f6d089eaf332307ebf4f6dc96aee4a
+name, memory.total [MiB]
+NVIDIA RTX PRO 4000 Blackwell, 24467 MiB
+LOADING train: 345 classes, at most 5000 each
+LOADED train: 1725000 samples
+LOADING valid: 345 classes, at most 500 each
+LOADED valid: 172500 samples
+DATA READY in 46.9s; train=1725000 valid=172500
+BEGIN FORMAL 345-CLASS TRAINING: configs/lstm_baseline.json
+device=cuda classes=345 train=1725000 valid=172500 scale_factor=1.0000
+wandb: [wandb.login()] Loaded credentials for https://api.forge.coreweave.com from /root/.netrc.
+wandb: Currently logged in as: jsohyun (jsohyun-carnegie-mellon-university) to https://api.forge.coreweave.com. Use `wandb login --relogin` to force relogin
+wandb: setting up run js5giqv8
+wandb: Tracking run with wandb version 0.31.2
+wandb: Run data is saved locally in /workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/results/lstm_baseline_345class_20261124_rented/wandb/run-20261124_095659-js5giqv8
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lstm_baseline_rented
+wandb: ⭐️ View project at https://forge.coreweave.com/wandb/jsohyun-carnegie-mellon-university/vector-sketch-classification
+wandb: 🚀 View run at https://forge.coreweave.com/wandb/jsohyun-carnegie-mellon-university/vector-sketch-classification/runs/js5giqv8
+config=configs/lstm_baseline.json tag=lstm_baseline epochs=config data=/workspace/processed_subset out=/workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/results/lstm_baseline_345class_20261124_rented
+8070b87c17f6d089eaf332307ebf4f6dc96aee4a
+name, memory.total [MiB]
+NVIDIA RTX PRO 4000 Blackwell, 24467 MiB
+Traceback (most recent call last):
+  File "/workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/delta_run/run_all345.py", line 101, in <module>
+    main()
+  File "/workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/delta_run/run_all345.py", line 54, in main
+    output.mkdir(parents=True, exist_ok=args.resume)
+  File "/usr/lib/python3.12/pathlib.py", line 1313, in mkdir
+    os.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/results/lstm_baseline_345class_20261124_rented'
+config=configs/lstm_baseline.json tag=lstm_baseline epochs=config data=/workspace/processed_subset out=/workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/results/lstm_baseline_345class_20261124_rented
+8070b87c17f6d089eaf332307ebf4f6dc96aee4a
+name, memory.total [MiB]
+NVIDIA RTX PRO 4000 Blackwell, 24467 MiB
+LOADING train: 345 classes, at most 5000 each
+LOADED train: 1725000 samples
+LOADING valid: 345 classes, at most 500 each
+LOADED valid: 172500 samples
+DATA READY in 45.0s; train=1725000 valid=172500
+BEGIN FORMAL 345-CLASS TRAINING: configs/lstm_baseline.json
+device=cuda classes=345 train=1725000 valid=172500 scale_factor=1.0000
+wandb: [wandb.login()] Loaded credentials for https://api.forge.coreweave.com from /root/.netrc.
+wandb: Currently logged in as: jsohyun (jsohyun-carnegie-mellon-university) to https://api.forge.coreweave.com. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.31.2
+wandb: Run data is saved locally in /workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/results/lstm_baseline_345class_20261124_rented/wandb/run-20261124_100054-f905r4dt
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lstm_baseline_rented
+wandb: ⭐️ View project at https://forge.coreweave.com/wandb/jsohyun-carnegie-mellon-university/vector-sketch-classification
+wandb: 🚀 View run at https://forge.coreweave.com/wandb/jsohyun-carnegie-mellon-university/vector-sketch-classification/runs/f905r4dt
+epoch   1 | train loss 2.0911 acc 0.5034 | valid loss 1.3251 acc 0.6566
+epoch   2 | train loss 1.1731 acc 0.6924 | valid loss 1.1037 acc 0.7103
+epoch   3 | train loss 1.0091 acc 0.7319 | valid loss 1.0116 acc 0.7311
+epoch   4 | train loss 0.9255 acc 0.7519 | valid loss 0.9846 acc 0.7375
+epoch   5 | train loss 0.8717 acc 0.7649 | valid loss 0.9553 acc 0.7453
+epoch   6 | train loss 0.8327 acc 0.7744 | valid loss 0.9378 acc 0.7495
+epoch   7 | train loss 0.8019 acc 0.7816 | valid loss 0.9288 acc 0.7522
+epoch   8 | train loss 0.7765 acc 0.7875 | valid loss 0.9262 acc 0.7530
+epoch   9 | train loss 0.7553 acc 0.7931 | valid loss 0.9254 acc 0.7532
+epoch  10 | train loss 0.7368 acc 0.7974 | valid loss 0.9247 acc 0.7535
+best valid acc 0.7535; outputs in /workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/results/lstm_baseline_345class_20261124_rented
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading history steps 8-9, summary, console lines 9-10
+wandb: 
+wandb: Run history:
+wandb:          epoch ▁▂▃▃▄▅▆▆▇█
+wandb:      train/acc ▁▅▆▇▇▇████
+wandb:     train/loss █▃▂▂▂▁▁▁▁▁
+wandb:      valid/acc ▁▅▆▇▇█████
+wandb: valid/best_acc ▁▅▆▇▇█████
+wandb:     valid/loss █▄▃▂▂▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb: best_valid_acc 0.75354
+wandb:          epoch 10
+wandb:      train/acc 0.79737
+wandb:     train/loss 0.73683
+wandb:      valid/acc 0.75354
+wandb: valid/best_acc 0.75354
+wandb:     valid/loss 0.92475
+wandb: 
+wandb: 🚀 View run lstm_baseline_rented at: https://forge.coreweave.com/wandb/jsohyun-carnegie-mellon-university/vector-sketch-classification/runs/f905r4dt
+wandb: ⭐️ View project at: https://forge.coreweave.com/wandb/jsohyun-carnegie-mellon-university/vector-sketch-classification
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/results/lstm_baseline_345class_20261124_rented/wandb/run-20261124_100054-f905r4dt/logs
+valid: loss 0.9247 acc 0.7535 (n=172500)
+345-CLASS TRAINING AND CHECKPOINT VALIDATION COMPLETED; TEST SPLIT UNTOUCHED

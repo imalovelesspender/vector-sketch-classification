@@ -1,0 +1,53 @@
+{
+  "os":  "Linux-6.8.0-149-generic-x86_64-with-glibc2.39",
+  "python":  "CPython 3.12.3",
+  "startedAt":  "2026-11-24T10:10:10.642460Z",
+  "args":  [
+    "--config",
+    "configs/stroke_embed.json",
+    "--data-dir",
+    "/workspace/processed_subset",
+    "--output-dir",
+    "/workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/results/stroke_embed_345class_20261124_rented"
+  ],
+  "program":  "/workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/delta_run/run_all345.py",
+  "codePath":  "docs/experiments/stroke_embed_345/delta_run/run_all345.py",
+  "codePathLocal":  "run_all345.py",
+  "git":  {
+    "remote":  "https://github.com/imalovelesspender/vector-sketch-classification.git",
+    "commit":  "8070b87c17f6d089eaf332307ebf4f6dc96aee4a"
+  },
+  "email":  "jsohyun@andrew.cmu.edu",
+  "root":  "/workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/results/stroke_embed_345class_20261124_rented",
+  "host":  "01b69d435cd6",
+  "executable":  "/usr/local/bin/python",
+  "cpu_count":  24,
+  "cpu_count_logical":  48,
+  "gpu":  "NVIDIA RTX PRO 4000 Blackwell",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "53687091200",
+      "used":  "2517463040"
+    }
+  },
+  "memory":  {
+    "total":  "134925565952"
+  },
+  "cpu":  {
+    "model":  "AMD EPYC 7352 24-Core Processor"
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA RTX PRO 4000 Blackwell",
+      "memoryTotal":  "25655508992",
+      "cudaCores":  8960,
+      "architecture":  "Blackwell",
+      "uuid":  "GPU-0350b471-31a5-1e54-6fa7-b3182ae0c88a",
+      "pciBusId":  "00000000:C1:00.0",
+      "numaNode":  0
+    }
+  ],
+  "cudaVersion":  "13.2",
+  "writerId":  "01a20d08-ce5b-7097-bd84-cd66d78bdf4a"
+}

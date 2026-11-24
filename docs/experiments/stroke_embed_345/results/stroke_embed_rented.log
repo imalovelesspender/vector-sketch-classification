@@ -1,0 +1,122 @@
+config=configs/stroke_embed.json tag=stroke_embed epochs=config data=/workspace/processed_subset out=/workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/results/stroke_embed_345class_20261124_rented
+8070b87c17f6d089eaf332307ebf4f6dc96aee4a
+name, memory.total [MiB]
+NVIDIA RTX PRO 4000 Blackwell, 24467 MiB
+LOADING train: 345 classes, at most 5000 each
+LOADED train: 1725000 samples
+LOADING valid: 345 classes, at most 500 each
+LOADED valid: 172500 samples
+DATA READY in 45.2s; train=1725000 valid=172500
+BEGIN FORMAL 345-CLASS TRAINING: configs/stroke_embed.json
+device=cuda classes=345 train=1725000 valid=172500 scale_factor=1.0000
+wandb: [wandb.login()] Loaded credentials for https://api.forge.coreweave.com from /root/.netrc.
+wandb: Currently logged in as: jsohyun (jsohyun-carnegie-mellon-university) to https://api.forge.coreweave.com. Use `wandb login --relogin` to force relogin
+wandb: setting up run nkeac2s3
+wandb: Tracking run with wandb version 0.31.2
+wandb: Run data is saved locally in /workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/results/stroke_embed_345class_20261124_rented/wandb/run-20261124_093927-nkeac2s3
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run stroke_embed_rented
+wandb: ⭐️ View project at https://forge.coreweave.com/wandb/jsohyun-carnegie-mellon-university/vector-sketch-classification
+wandb: 🚀 View run at https://forge.coreweave.com/wandb/jsohyun-carnegie-mellon-university/vector-sketch-classification/runs/nkeac2s3
+config=configs/stroke_embed.json tag=stroke_embed epochs=config data=/workspace/processed_subset out=/workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/results/stroke_embed_345class_20261124_rented
+8070b87c17f6d089eaf332307ebf4f6dc96aee4a
+name, memory.total [MiB]
+NVIDIA RTX PRO 4000 Blackwell, 24467 MiB
+Traceback (most recent call last):
+  File "/workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/delta_run/run_all345.py", line 101, in <module>
+    main()
+  File "/workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/delta_run/run_all345.py", line 54, in main
+    output.mkdir(parents=True, exist_ok=args.resume)
+  File "/usr/lib/python3.12/pathlib.py", line 1313, in mkdir
+    os.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/results/stroke_embed_345class_20261124_rented'
+config=configs/stroke_embed.json tag=stroke_embed epochs=config data=/workspace/processed_subset out=/workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/results/stroke_embed_345class_20261124_rented
+8070b87c17f6d089eaf332307ebf4f6dc96aee4a
+name, memory.total [MiB]
+NVIDIA RTX PRO 4000 Blackwell, 24467 MiB
+LOADING train: 345 classes, at most 5000 each
+LOADED train: 1725000 samples
+LOADING valid: 345 classes, at most 500 each
+LOADED valid: 172500 samples
+DATA READY in 46.6s; train=1725000 valid=172500
+BEGIN FORMAL 345-CLASS TRAINING: configs/stroke_embed.json
+device=cuda classes=345 train=1725000 valid=172500 scale_factor=1.0000
+wandb: [wandb.login()] Loaded credentials for https://api.forge.coreweave.com from /root/.netrc.
+wandb: Currently logged in as: jsohyun (jsohyun-carnegie-mellon-university) to https://api.forge.coreweave.com. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.31.2
+wandb: Run data is saved locally in /workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/results/stroke_embed_345class_20261124_rented/wandb/run-20261124_094940-6qob2kto
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run stroke_embed_rented
+wandb: ⭐️ View project at https://forge.coreweave.com/wandb/jsohyun-carnegie-mellon-university/vector-sketch-classification
+wandb: 🚀 View run at https://forge.coreweave.com/wandb/jsohyun-carnegie-mellon-university/vector-sketch-classification/runs/6qob2kto
+config=configs/stroke_embed.json tag=stroke_embed epochs=config data=/workspace/processed_subset out=/workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/results/stroke_embed_345class_20261124_rented
+8070b87c17f6d089eaf332307ebf4f6dc96aee4a
+name, memory.total [MiB]
+NVIDIA RTX PRO 4000 Blackwell, 24467 MiB
+Traceback (most recent call last):
+  File "/workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/delta_run/run_all345.py", line 101, in <module>
+    main()
+  File "/workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/delta_run/run_all345.py", line 54, in main
+    output.mkdir(parents=True, exist_ok=args.resume)
+  File "/usr/lib/python3.12/pathlib.py", line 1313, in mkdir
+    os.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/results/stroke_embed_345class_20261124_rented'
+config=configs/stroke_embed.json tag=stroke_embed epochs=config data=/workspace/processed_subset out=/workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/results/stroke_embed_345class_20261124_rented
+8070b87c17f6d089eaf332307ebf4f6dc96aee4a
+name, memory.total [MiB]
+NVIDIA RTX PRO 4000 Blackwell, 24467 MiB
+Traceback (most recent call last):
+  File "/workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/delta_run/run_all345.py", line 101, in <module>
+    main()
+  File "/workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/delta_run/run_all345.py", line 54, in main
+    output.mkdir(parents=True, exist_ok=args.resume)
+  File "/usr/lib/python3.12/pathlib.py", line 1313, in mkdir
+    os.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/results/stroke_embed_345class_20261124_rented'
+config=configs/stroke_embed.json tag=stroke_embed epochs=config data=/workspace/processed_subset out=/workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/results/stroke_embed_345class_20261124_rented
+8070b87c17f6d089eaf332307ebf4f6dc96aee4a
+name, memory.total [MiB]
+NVIDIA RTX PRO 4000 Blackwell, 24467 MiB
+LOADING train: 345 classes, at most 5000 each
+LOADED train: 1725000 samples
+LOADING valid: 345 classes, at most 500 each
+LOADED valid: 172500 samples
+DATA READY in 44.4s; train=1725000 valid=172500
+BEGIN FORMAL 345-CLASS TRAINING: configs/stroke_embed.json
+device=cuda classes=345 train=1725000 valid=172500 scale_factor=1.0000
+wandb: [wandb.login()] Loaded credentials for https://api.forge.coreweave.com from /root/.netrc.
+wandb: Currently logged in as: jsohyun (jsohyun-carnegie-mellon-university) to https://api.forge.coreweave.com. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.31.2
+wandb: Run data is saved locally in /workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/results/stroke_embed_345class_20261124_rented/wandb/run-20261124_100909-pumnyakq
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run stroke_embed_rented
+wandb: ⭐️ View project at https://forge.coreweave.com/wandb/jsohyun-carnegie-mellon-university/vector-sketch-classification
+wandb: 🚀 View run at https://forge.coreweave.com/wandb/jsohyun-carnegie-mellon-university/vector-sketch-classification/runs/pumnyakq
+config=configs/stroke_embed.json tag=stroke_embed epochs=config data=/workspace/processed_subset out=/workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/results/stroke_embed_345class_20261124_rented
+8070b87c17f6d089eaf332307ebf4f6dc96aee4a
+name, memory.total [MiB]
+NVIDIA RTX PRO 4000 Blackwell, 24467 MiB
+LOADING train: 345 classes, at most 5000 each
+LOADED train: 1725000 samples
+LOADING valid: 345 classes, at most 500 each
+LOADED valid: 172500 samples
+DATA READY in 45.2s; train=1725000 valid=172500
+BEGIN FORMAL 345-CLASS TRAINING: configs/stroke_embed.json
+device=cuda classes=345 train=1725000 valid=172500 scale_factor=1.0000
+wandb: [wandb.login()] Loaded credentials for https://api.forge.coreweave.com from /root/.netrc.
+wandb: Currently logged in as: jsohyun (jsohyun-carnegie-mellon-university) to https://api.forge.coreweave.com. Use `wandb login --relogin` to force relogin
+wandb: setting up run okbpvl88
+wandb: Tracking run with wandb version 0.31.2
+wandb: Run data is saved locally in /workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/results/stroke_embed_345class_20261124_rented/wandb/run-20261124_101010-okbpvl88
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run stroke_embed_rented
+wandb: ⭐️ View project at https://forge.coreweave.com/wandb/jsohyun-carnegie-mellon-university/vector-sketch-classification
+wandb: 🚀 View run at https://forge.coreweave.com/wandb/jsohyun-carnegie-mellon-university/vector-sketch-classification/runs/okbpvl88
+epoch   1 | train loss 2.3913 acc 0.4438 | valid loss 1.6919 acc 0.5769
+epoch   2 | train loss 1.4700 acc 0.6244 | valid loss 1.3613 acc 0.6504
+epoch   3 | train loss 1.2316 acc 0.6786 | valid loss 1.2470 acc 0.6771
+epoch   4 | train loss 1.1066 acc 0.7074 | valid loss 1.1656 acc 0.6965
+epoch   5 | train loss 1.0259 acc 0.7260 | valid loss 1.1189 acc 0.7084
+epoch   6 | train loss 0.9676 acc 0.7400 | valid loss 1.1012 acc 0.7119
+epoch   7 | train loss 0.9223 acc 0.7503 | valid loss 1.0974 acc 0.7148
+epoch   8 | train loss 0.8855 acc 0.7589 | valid loss 1.1003 acc 0.7153
