@@ -21,7 +21,7 @@ import torch
 from src.data import build_dataloaders, build_datasets
 from src.engine import run_epoch
 from src.models.classifier import build_model
-from src.utils import get_device, plot_curves, save_checkpoint, save_json, set_seed
+from src.utils import get_device, load_checkpoint, plot_curves, save_checkpoint, save_json, set_seed
 
 
 def parse_args(argv=None):
@@ -33,6 +33,8 @@ def parse_args(argv=None):
     p.add_argument("--epochs", type=int, help="override train.epochs")
     p.add_argument("--device", help="override train.device (auto, cpu, cuda, mps)")
     p.add_argument("--seed", type=int, help="override seed")
+    p.add_argument("--resume", action="store_true",
+                   help="continue from <output_dir>/last.pt if it exists (optimizer state, epoch, history)")
     return p.parse_args(argv)
 
 
@@ -52,6 +54,8 @@ def load_config(args) -> dict:
         cfg["train"]["device"] = args.device
     if args.seed is not None:
         cfg["seed"] = args.seed
+    if args.resume:
+        cfg["resume"] = True
     return cfg
 
 
@@ -113,9 +117,26 @@ def train(cfg: dict) -> dict:
     }
     save_json(cfg, os.path.join(out_dir, "config.json"))
 
+    # Optional Weights & Biases logging: enabled when WANDB_PROJECT is set (or cfg["wandb"]["project"]).
+    # Nothing changes when neither is set or wandb is not installed.
+    wb = _init_wandb(cfg, meta)
+
     history = {"train_loss": [], "train_acc": [], "val_loss": [], "val_acc": []}
     best_acc = -1.0
-    for epoch in range(1, train_cfg["epochs"] + 1):
+    start_epoch = 1
+    last_path = os.path.join(out_dir, "last.pt")
+    if cfg.get("resume") and os.path.isfile(last_path):
+        ck = load_checkpoint(last_path, map_location=device)
+        model.load_state_dict(ck["model_state"])
+        optimizer.load_state_dict(ck["optimizer_state"])
+        start_epoch = ck["epoch"] + 1
+        hist_path = os.path.join(out_dir, "history.json")
+        if os.path.isfile(hist_path):
+            with open(hist_path) as f:
+                history = json.load(f)
+            best_acc = max(history["val_acc"], default=-1.0)
+        print(f"resumed from {last_path}: epoch {ck['epoch']} done, best valid acc {best_acc:.4f}")
+    for epoch in range(start_epoch, train_cfg["epochs"] + 1):
         tr = run_epoch(model, loaders["train"], device, optimizer, train_cfg.get("grad_clip"))
         va = run_epoch(model, loaders["valid"], device)
         for k, v in (("train", tr), ("val", va)):
@@ -125,6 +146,10 @@ def train(cfg: dict) -> dict:
             f"epoch {epoch:3d} | train loss {tr['loss']:.4f} acc {tr['acc']:.4f} "
             f"| valid loss {va['loss']:.4f} acc {va['acc']:.4f}"
         )
+        if wb is not None:
+            wb.log({"epoch": epoch, "train/loss": tr["loss"], "train/acc": tr["acc"],
+                    "valid/loss": va["loss"], "valid/acc": va["acc"],
+                    "valid/best_acc": max(best_acc, va["acc"])}, step=epoch)
         save_checkpoint(os.path.join(out_dir, "last.pt"), model, optimizer, epoch=epoch, val=va, **meta)
         if va["acc"] > best_acc:
             best_acc = va["acc"]
@@ -133,7 +158,32 @@ def train(cfg: dict) -> dict:
         plot_curves(history, os.path.join(out_dir, "curves.png"))
 
     print(f"best valid acc {best_acc:.4f}; outputs in {out_dir}")
+    if wb is not None:
+        wb.summary["best_valid_acc"] = best_acc
+        wb.finish()
     return history
+
+
+def _init_wandb(cfg: dict, meta: dict):
+    wcfg = cfg.get("wandb", {}) or {}
+    project = wcfg.get("project") or os.environ.get("WANDB_PROJECT")
+    if not project or wcfg.get("enabled") is False:
+        return None
+    try:
+        import wandb
+    except ImportError:
+        print("wandb not installed; skipping W&B logging (pip install wandb)")
+        return None
+    run = wandb.init(
+        project=project,
+        entity=wcfg.get("entity") or os.environ.get("WANDB_ENTITY"),
+        name=wcfg.get("name") or os.environ.get("WANDB_NAME") or os.path.basename(cfg["output_dir"].rstrip("/")),
+        group=wcfg.get("group") or os.environ.get("WANDB_RUN_GROUP"),
+        tags=wcfg.get("tags"),
+        config={**cfg, "num_classes": len(meta["categories"]), "input_dim": meta["input_dim"]},
+        dir=cfg["output_dir"],
+    )
+    return run
 
 
 def main(argv=None):
