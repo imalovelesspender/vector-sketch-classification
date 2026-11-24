@@ -52,11 +52,23 @@ class LSTMEncoder(nn.Module):
         dropout: float = 0.0,
         pooling: str = "last",
         embedding_dim: Optional[int] = None,
+        centred_xy: bool = False,
+        coordinate_scale: Optional[float] = None,
     ):
+        """``centred_xy``: append the per-sketch centred absolute coordinates (cx, cy) to every
+        point, as in Sihui's ``add_centered_coordinates`` (stroke-3 -> 5 features). The point
+        sequence is unchanged otherwise; this is the "point + location" control between the
+        baseline and the stroke tokens. Needs ``coordinate_scale`` (manifest normalization.scale)."""
         super().__init__()
         if pooling not in ("last", "mean"):
             raise ValueError(f"unknown pooling {pooling!r}")
         self.pooling = pooling
+        self.centred_xy = bool(centred_xy)
+        self.coordinate_scale = coordinate_scale
+        if self.centred_xy:
+            if coordinate_scale is None:
+                raise ValueError("centred_xy needs coordinate_scale (manifest normalization.scale)")
+            input_dim += 2
         self.num_directions = 2 if bidirectional else 1
         self.lstm = nn.LSTM(
             input_dim,
@@ -72,6 +84,10 @@ class LSTMEncoder(nn.Module):
         self.embedding_dim = embedding_dim or pooled_dim
 
     def forward(self, strokes: torch.Tensor, lengths: torch.Tensor, **_ignored) -> torch.Tensor:
+        if self.centred_xy:
+            from src.data.stroke_split import centred_coordinates
+
+            strokes = torch.cat([strokes, centred_coordinates(strokes, lengths, self.coordinate_scale)], dim=-1)
         packed = pack_padded_sequence(
             strokes, lengths.cpu(), batch_first=True, enforce_sorted=False
         )
