@@ -19,3 +19,39 @@ wandb: Syncing run lstm_point_centred_rented
 wandb: ⭐️ View project at https://forge.coreweave.com/wandb/jsohyun-carnegie-mellon-university/vector-sketch-classification
 wandb: 🚀 View run at https://forge.coreweave.com/wandb/jsohyun-carnegie-mellon-university/vector-sketch-classification/runs/emoesm4u
 epoch   1 | train loss 1.9643 acc 0.5315 | valid loss 1.2411 acc 0.6771
+epoch   2 | train loss 1.1028 acc 0.7107 | valid loss 1.0466 acc 0.7249
+epoch   3 | train loss 0.9556 acc 0.7462 | valid loss 0.9689 acc 0.7439
+epoch   4 | train loss 0.8804 acc 0.7639 | valid loss 0.9397 acc 0.7506
+epoch   5 | train loss 0.8304 acc 0.7762 | valid loss 0.9223 acc 0.7549
+epoch   6 | train loss 0.7939 acc 0.7844 | valid loss 0.9098 acc 0.7578
+epoch   7 | train loss 0.7649 acc 0.7918 | valid loss 0.9023 acc 0.7604
+epoch   8 | train loss 0.7405 acc 0.7976 | valid loss 0.9015 acc 0.7608
+epoch   9 | train loss 0.7205 acc 0.8024 | valid loss 0.9057 acc 0.7600
+epoch  10 | train loss 0.7026 acc 0.8066 | valid loss 0.9035 acc 0.7610
+best valid acc 0.7610; outputs in /workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/results/lstm_point_centred_345class_20261124_rented
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:          epoch ▁▂▃▃▄▅▆▆▇█
+wandb:      train/acc ▁▆▆▇▇▇████
+wandb:     train/loss █▃▂▂▂▂▁▁▁▁
+wandb:      valid/acc ▁▅▇▇▇█████
+wandb: valid/best_acc ▁▅▇▇▇█████
+wandb:     valid/loss █▄▂▂▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb: best_valid_acc 0.76102
+wandb:          epoch 10
+wandb:      train/acc 0.80659
+wandb:     train/loss 0.70261
+wandb:      valid/acc 0.76102
+wandb: valid/best_acc 0.76102
+wandb:     valid/loss 0.90346
+wandb: 
+wandb: 🚀 View run lstm_point_centred_rented at: https://forge.coreweave.com/wandb/jsohyun-carnegie-mellon-university/vector-sketch-classification/runs/emoesm4u
+wandb: ⭐️ View project at: https://forge.coreweave.com/wandb/jsohyun-carnegie-mellon-university/vector-sketch-classification
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/results/lstm_point_centred_345class_20261124_rented/wandb/run-20261124_110516-emoesm4u/logs
+valid: loss 0.9035 acc 0.7610 (n=172500)
+345-CLASS TRAINING AND CHECKPOINT VALIDATION COMPLETED; TEST SPLIT UNTOUCHED

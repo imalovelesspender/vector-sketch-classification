@@ -1,0 +1,4 @@
+results/*/best.pt
+results/*/last.pt
+results/*/*_sample_ids.json
+results/*/wandb/

@@ -120,3 +120,38 @@ epoch   5 | train loss 1.0259 acc 0.7260 | valid loss 1.1189 acc 0.7084
 epoch   6 | train loss 0.9676 acc 0.7400 | valid loss 1.1012 acc 0.7119
 epoch   7 | train loss 0.9223 acc 0.7503 | valid loss 1.0974 acc 0.7148
 epoch   8 | train loss 0.8855 acc 0.7589 | valid loss 1.1003 acc 0.7153
+epoch   9 | train loss 0.8550 acc 0.7664 | valid loss 1.0910 acc 0.7177
+epoch  10 | train loss 0.8280 acc 0.7726 | valid loss 1.0830 acc 0.7211
+best valid acc 0.7211; outputs in /workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/results/stroke_embed_345class_20261124_rented
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:          epoch ▁▂▃▃▄▅▆▆▇█
+wandb:      train/acc ▁▅▆▇▇▇████
+wandb:     train/loss █▄▃▂▂▂▁▁▁▁
+wandb:      valid/acc ▁▅▆▇▇█████
+wandb: valid/best_acc ▁▅▆▇▇█████
+wandb:     valid/loss █▄▃▂▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb: best_valid_acc 0.72106
+wandb:          epoch 10
+wandb:      train/acc 0.77256
+wandb:     train/loss 0.82804
+wandb:      valid/acc 0.72106
+wandb: valid/best_acc 0.72106
+wandb:     valid/loss 1.083
+wandb: 
+wandb: 🚀 View run stroke_embed_rented at: https://forge.coreweave.com/wandb/jsohyun-carnegie-mellon-university/vector-sketch-classification/runs/okbpvl88
+wandb: ⭐️ View project at: https://forge.coreweave.com/wandb/jsohyun-carnegie-mellon-university/vector-sketch-classification
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/results/stroke_embed_345class_20261124_rented/wandb/run-20261124_101010-okbpvl88/logs
+valid: loss 1.0830 acc 0.7210 (n=172500)
+Traceback (most recent call last):
+  File "/workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/delta_run/run_all345.py", line 101, in <module>
+    main()
+  File "/workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/delta_run/run_all345.py", line 96, in main
+    assert abs(metrics['acc'] - max(history['val_acc'])) < 1e-8
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

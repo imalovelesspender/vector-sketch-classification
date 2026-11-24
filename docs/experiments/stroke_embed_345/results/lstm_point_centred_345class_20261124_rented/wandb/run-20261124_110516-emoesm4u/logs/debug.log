@@ -16,3 +16,8 @@ config: {'seed': 42, 'output_dir': '/workspace/vector-sketch-classification/docs
 2026-11-24 11:05:16,870 INFO    MainThread:4057 [wandb_run.py:_redirect():2450] Wrapping output streams.
 2026-11-24 11:05:16,870 INFO    MainThread:4057 [wandb_run.py:_redirect():2473] Redirects installed.
 2026-11-24 11:05:16,874 INFO    MainThread:4057 [wandb_init.py:init():1007] run started, returning control to user process
+2026-11-24 12:19:38,701 INFO    MainThread:4057 [wandb_run.py:_finish():2303] finishing run jsohyun-carnegie-mellon-university/vector-sketch-classification/emoesm4u
+2026-11-24 12:19:38,701 INFO    MainThread:4057 [wandb_run.py:_atexit_cleanup():2498] got exitcode: 0
+2026-11-24 12:19:38,701 INFO    MainThread:4057 [wandb_run.py:_restore():2480] restore
+2026-11-24 12:19:38,701 INFO    MainThread:4057 [wandb_run.py:_restore():2486] restore done
+2026-11-24 12:19:40,209 INFO    MainThread:4057 [wandb_run.py:_footer_sync_info():3955] logging synced files

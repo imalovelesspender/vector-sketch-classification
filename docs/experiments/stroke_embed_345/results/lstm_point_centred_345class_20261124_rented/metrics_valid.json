@@ -1,0 +1,8 @@
+{
+  "loss": 0.9034630837481955,
+  "acc": 0.7610202898550724,
+  "split": "valid",
+  "num_samples": 172500,
+  "checkpoint": "/workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/results/lstm_point_centred_345class_20261124_rented/best.pt",
+  "epoch": 10
+}
