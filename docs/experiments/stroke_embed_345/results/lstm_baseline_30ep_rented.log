@@ -1,0 +1,76 @@
+config=configs/lstm_baseline.json tag=lstm_baseline_30ep epochs=30 data=/workspace/processed_subset out=/workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/results/lstm_baseline_30ep_345class_20261126_rented
+b596d1d01b6d4087adb07cb85533ff3842ec27e8
+name, memory.total [MiB]
+NVIDIA RTX A5000, 24564 MiB
+LOADING train: 345 classes, at most 5000 each
+LOADED train: 1725000 samples
+LOADING valid: 345 classes, at most 500 each
+LOADED valid: 172500 samples
+DATA READY in 33.0s; train=1725000 valid=172500
+BEGIN FORMAL 345-CLASS TRAINING: configs/lstm_baseline.json
+device=cuda classes=345 train=1725000 valid=172500 scale_factor=1.0000
+wandb: [wandb.login()] Loaded credentials for https://api.forge.coreweave.com from /root/.netrc.
+wandb: Currently logged in as: jsohyun (jsohyun-carnegie-mellon-university) to https://api.forge.coreweave.com. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.31.2
+wandb: Run data is saved locally in /workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/results/lstm_baseline_30ep_345class_20261126_rented/wandb/run-20261126_040436-w9r26tew
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lstm_baseline_30ep_rented
+wandb: ⭐️ View project at https://forge.coreweave.com/wandb/jsohyun-carnegie-mellon-university/vector-sketch-classification
+wandb: 🚀 View run at https://forge.coreweave.com/wandb/jsohyun-carnegie-mellon-university/vector-sketch-classification/runs/w9r26tew
+epoch   1 | train loss 2.0721 acc 0.5072 | valid loss 1.3137 acc 0.6594
+epoch   2 | train loss 1.1663 acc 0.6941 | valid loss 1.0980 acc 0.7092
+epoch   3 | train loss 1.0068 acc 0.7322 | valid loss 1.0175 acc 0.7296
+epoch   4 | train loss 0.9251 acc 0.7520 | valid loss 0.9839 acc 0.7382
+epoch   5 | train loss 0.8725 acc 0.7646 | valid loss 0.9574 acc 0.7450
+epoch   6 | train loss 0.8338 acc 0.7739 | valid loss 0.9432 acc 0.7479
+epoch   7 | train loss 0.8032 acc 0.7812 | valid loss 0.9336 acc 0.7505
+epoch   8 | train loss 0.7780 acc 0.7874 | valid loss 0.9355 acc 0.7506
+epoch   9 | train loss 0.7574 acc 0.7927 | valid loss 0.9295 acc 0.7513
+epoch  10 | train loss 0.7388 acc 0.7972 | valid loss 0.9375 acc 0.7501
+epoch  11 | train loss 0.7230 acc 0.8006 | valid loss 0.9382 acc 0.7514
+epoch  12 | train loss 0.7082 acc 0.8043 | valid loss 0.9421 acc 0.7512
+epoch  13 | train loss 0.6954 acc 0.8076 | valid loss 0.9480 acc 0.7497
+epoch  14 | train loss 0.6833 acc 0.8102 | valid loss 0.9521 acc 0.7493
+epoch  15 | train loss 0.6730 acc 0.8128 | valid loss 0.9562 acc 0.7491
+epoch  16 | train loss 0.6634 acc 0.8153 | valid loss 0.9573 acc 0.7486
+epoch  17 | train loss 0.6540 acc 0.8177 | valid loss 0.9637 acc 0.7492
+epoch  18 | train loss 0.6455 acc 0.8195 | valid loss 0.9710 acc 0.7471
+epoch  19 | train loss 0.6376 acc 0.8214 | valid loss 0.9807 acc 0.7461
+epoch  20 | train loss 0.6303 acc 0.8234 | valid loss 0.9915 acc 0.7447
+epoch  21 | train loss 0.6240 acc 0.8246 | valid loss 0.9939 acc 0.7448
+epoch  22 | train loss 0.6174 acc 0.8263 | valid loss 0.9920 acc 0.7443
+epoch  23 | train loss 0.6113 acc 0.8279 | valid loss 0.9981 acc 0.7433
+epoch  24 | train loss 0.6058 acc 0.8292 | valid loss 1.0078 acc 0.7420
+epoch  25 | train loss 0.6008 acc 0.8304 | valid loss 1.0140 acc 0.7418
+epoch  26 | train loss 0.5956 acc 0.8317 | valid loss 1.0166 acc 0.7414
+epoch  27 | train loss 0.5913 acc 0.8324 | valid loss 1.0226 acc 0.7417
+epoch  28 | train loss 0.5865 acc 0.8338 | valid loss 1.0277 acc 0.7398
+epoch  29 | train loss 0.5822 acc 0.8349 | valid loss 1.0321 acc 0.7386
+epoch  30 | train loss 0.5781 acc 0.8360 | valid loss 1.0356 acc 0.7381
+best valid acc 0.7514; outputs in /workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/results/lstm_baseline_30ep_345class_20261126_rented
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:          epoch ▁▁▁▂▂▂▂▃▃▃▃▄▄▄▄▅▅▅▅▆▆▆▆▇▇▇▇███
+wandb:      train/acc ▁▅▆▆▆▇▇▇▇▇▇▇▇▇████████████████
+wandb:     train/loss █▄▃▃▂▂▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:      valid/acc ▁▅▆▇███████████████▇▇▇▇▇▇▇▇▇▇▇
+wandb: valid/best_acc ▁▅▆▇██████████████████████████
+wandb:     valid/loss █▄▃▂▂▁▁▁▁▁▁▁▁▁▁▂▂▂▂▂▂▂▂▂▃▃▃▃▃▃
+wandb: 
+wandb: Run summary:
+wandb: best_valid_acc 0.75136
+wandb:          epoch 30
+wandb:      train/acc 0.83598
+wandb:     train/loss 0.57814
+wandb:      valid/acc 0.73812
+wandb: valid/best_acc 0.75136
+wandb:     valid/loss 1.03562
+wandb: 
+wandb: 🚀 View run lstm_baseline_30ep_rented at: https://forge.coreweave.com/wandb/jsohyun-carnegie-mellon-university/vector-sketch-classification/runs/w9r26tew
+wandb: ⭐️ View project at: https://forge.coreweave.com/wandb/jsohyun-carnegie-mellon-university/vector-sketch-classification
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: /workspace/vector-sketch-classification/docs/experiments/stroke_embed_345/results/lstm_baseline_30ep_345class_20261126_rented/wandb/run-20261126_040436-w9r26tew/logs
+valid: loss 0.9382 acc 0.7514 (n=172500)
+345-CLASS TRAINING AND CHECKPOINT VALIDATION COMPLETED; TEST SPLIT UNTOUCHED
