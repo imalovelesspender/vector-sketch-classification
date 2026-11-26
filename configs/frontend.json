@@ -1,0 +1,15 @@
+{
+  "preprocessing": {
+    "scale": 0.12035210854952101,
+    "box": 255.0,
+    "rdp_epsilon": 2.0,
+    "max_seq_len": 250
+  },
+  "backend": {
+    "type": "mock",
+    "url": "http://127.0.0.1:8000/predict",
+    "timeout": 10.0
+  },
+  "top_k": 5,
+  "save_dir": "data/sketches"
+}
