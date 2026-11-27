@@ -1,12 +1,25 @@
-# November 24 deadline change, explicitly approved by the user
+# Geometry5 screening closed out — November 27, 2026
 
-The original 20-epoch run is stopped with checkpoints preserved. The active
-experiment is now a separate 14-config screening: all 345 classes, 1,000 train
-and 100 validation samples per class, five epochs per configuration. Old partial
-20-epoch results are not mixed into this table. Final records and conclusions
-will appear in `docs/experiments/geometry5_short_20261124/` after completion.
+**Complete and ready for handoff:** 14/14 configurations on 345 classes, 1,000
+train / 100 validation sketches per class, five epochs, seed 42. All results
+were checkpoint-validated. No final test or retrieval evaluation was performed.
 
-The notes below are earlier development history, not the current task status.
+- [Results and protocol](experiments/geometry5_short_20261124/README.md)
+- [Handoff to Mae](experiments/geometry5_short_20261124/HANDOFF_TO_MAE.md)
+- [Chinese conclusions](experiments/geometry5_short_20261124/CONCLUSION_ZH.md)
+
+Five candidate inference checkpoints have been packaged separately with class
+order and preprocessing metadata. Prediction/embedding identity after packaging
+was verified. The inference helper is in `experiments/geometry_short_budget/inference.py`.
+Large weights and raw data are not committed.
+
+Geometry5 still uses point tokens with added centered XY; it is not an XAI
+stroke hierarchy. Depth/width runs are not parameter-matched. The original
+20-epoch task was stopped with checkpoints preserved; its partial numbers are
+not mixed into the completed short-budget table.
+
+Final model selection and frontend/backend contract alignment remain joint
+work with Mae. The notes below preserve earlier development history.
 
 # Anson experiment status — 2026-11-18
 

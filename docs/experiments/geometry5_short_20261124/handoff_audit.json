@@ -1,0 +1,59 @@
+{
+  "completed_configs": 14,
+  "epochs_per_config": 5,
+  "train_samples": 345000,
+  "valid_samples": 34500,
+  "test_used": false,
+  "candidate_checks": [
+    {
+      "name": "lstm_geometry5_base",
+      "embedding_dim": 512,
+      "epoch": 5,
+      "best_validation": 0.652,
+      "prediction_and_embedding_reload_verified": true,
+      "input_interface_verified": true,
+      "inference_checkpoint_sha256": "caf222510b19857d1d6083330c7864a36a0ad4c73565c0861220b993c36f3904",
+      "bytes": 2871411
+    },
+    {
+      "name": "lstm_geometry5_depth2",
+      "embedding_dim": 512,
+      "epoch": 5,
+      "best_validation": 0.6909855072463769,
+      "prediction_and_embedding_reload_verified": true,
+      "input_interface_verified": true,
+      "inference_checkpoint_sha256": "fb90a8ae3d8383865e8bb4690dcc01e7f0f2819f8249f2c7946562b129ff2df7",
+      "bytes": 9180083
+    },
+    {
+      "name": "lstm_geometry5_depth3",
+      "embedding_dim": 512,
+      "epoch": 5,
+      "best_validation": 0.6984057971014492,
+      "prediction_and_embedding_reload_verified": true,
+      "input_interface_verified": true,
+      "inference_checkpoint_sha256": "6116d02aae33ffb0965ebebd2089ad52d3519b774499466855b8752e765e4af0",
+      "bytes": 15488755
+    },
+    {
+      "name": "transformer_geometry5_base",
+      "embedding_dim": 128,
+      "epoch": 5,
+      "best_validation": 0.6411304347826087,
+      "prediction_and_embedding_reload_verified": true,
+      "input_interface_verified": true,
+      "inference_checkpoint_sha256": "4b6b53f0bcaff5de278bf1dcfdaed5bc17e8a107f0e7a90b49d186c3ebd294ae",
+      "bytes": 2854072
+    },
+    {
+      "name": "transformer_geometry5_depth6",
+      "embedding_dim": 128,
+      "epoch": 5,
+      "best_validation": 0.6623478260869565,
+      "prediction_and_embedding_reload_verified": true,
+      "input_interface_verified": true,
+      "inference_checkpoint_sha256": "695ff7c69d59b350de8da619040000261ab903b453dc03f1cdab1b415ec003d0",
+      "bytes": 4185056
+    }
+  ]
+}
