@@ -1,5 +1,13 @@
 # Geometry5 full-data follow-up — November 27, 2026
 
+**Latest user-approved scope: simpler queue.** Retain the two completed
+15-epoch Transformer input controls, finish the in-flight depth6 configuration,
+then train heads8 for15 epochs. Defer width256 and both deep LSTM configurations.
+Use `python -m experiments.geometry_followup_reduced` for this queue; the original
+seven-run worker below is superseded. The original in-flight run is allowed to
+finish depth6 without restarting. A separate reduced result directory preserves
+the original protocol and records inherited checkpoint hashes.
+
 The short-budget screening is complete; **the Geometry5 assignment is not**.
 The follow-up implementation is in `experiments/geometry_followup/README.md`:
 five controlled Transformer configurations on the full rebuilt cache, 15 epochs
