@@ -1,4 +1,14 @@
-# Geometry5 screening closed out — November 27, 2026
+# Geometry5 full-data follow-up — November 27, 2026
+
+The short-budget screening is complete; **the Geometry5 assignment is not**.
+The follow-up implementation is in `experiments/geometry_followup/README.md`:
+five controlled Transformer configurations on the full rebuilt cache, 15 epochs
+each; two deeper Geometry5 LSTMs, 20 epochs each, with audited existing full-data
+1-layer controls. These new runs are pending completion, not reported results.
+Final model selection remains joint work with Mae. See the local worker state
+and per-epoch histories for live status; this document is not a live job monitor.
+
+## Completed short-budget screening
 
 **Complete and ready for handoff:** 14/14 configurations on 345 classes, 1,000
 train / 100 validation sketches per class, five epochs, seed 42. All results
