@@ -21,7 +21,7 @@ from typing import Optional
 
 import torch
 import torch.nn as nn
-from torch.nn.utils.rnn import pack_padded_sequence, pad_packed_sequence
+from torch.nn.utils.rnn import pack_padded_sequence
 
 
 class LSTMEncoder(nn.Module):
@@ -38,7 +38,7 @@ class LSTMEncoder(nn.Module):
         dropout: dropout between LSTM layers (only if ``num_layers > 1``) and
             on the pooled output.
         pooling: ``"last"`` concatenates the final hidden state of each direction
-            of the top layer; ``"mean"`` averages LSTM outputs over valid steps.
+            of the top layer.
         embedding_dim: if set, a linear projection maps the pooled vector to this
             size; otherwise ``z`` is the pooled vector itself.
     """
@@ -54,7 +54,7 @@ class LSTMEncoder(nn.Module):
         embedding_dim: Optional[int] = None,
     ):
         super().__init__()
-        if pooling not in ("last", "mean"):
+        if pooling != "last":
             raise ValueError(f"unknown pooling {pooling!r}")
         self.pooling = pooling
         self.num_directions = 2 if bidirectional else 1
@@ -75,20 +75,10 @@ class LSTMEncoder(nn.Module):
         packed = pack_padded_sequence(
             strokes, lengths.cpu(), batch_first=True, enforce_sorted=False
         )
-        outputs, (h_n, _) = self.lstm(packed)
-        if self.pooling == "last":
-            # h_n: (num_layers * num_directions, B, H); take the top layer.
-            top = h_n[-self.num_directions:]
-            pooled = top.transpose(0, 1).reshape(strokes.size(0), -1)
-        else:
-            padded, _ = pad_packed_sequence(
-                outputs, batch_first=True, total_length=strokes.size(1)
-            )
-            mask = (
-                torch.arange(strokes.size(1), device=strokes.device)[None, :]
-                < lengths.to(strokes.device)[:, None]
-            ).unsqueeze(-1)
-            pooled = (padded * mask).sum(1) / lengths.to(strokes.device)[:, None]
+        _, (h_n, _) = self.lstm(packed)
+        # Concatenate the final hidden states of the top layer.
+        top = h_n[-self.num_directions:]
+        pooled = top.transpose(0, 1).reshape(strokes.size(0), -1)
         z = self.dropout(pooled)
         if self.proj is not None:
             z = self.proj(z)
